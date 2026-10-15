@@ -28,11 +28,11 @@ const funciones = [
 const ENLACE = "sumun.io/diagnostico/abc123";
 
 const invitados = [
-  { rol: "Directivos", src: "/images/diagnostico/directiva.png", className: styles.invDirectivos },
-  { rol: "Docentes", src: "/images/diagnostico/docente.png", className: styles.invDocentes },
-  { rol: "Estudiante", src: "/images/diagnostico/estudiante.png", className: styles.invEstudiante },
-  { rol: "Familia", src: "/images/diagnostico/familia.png", className: styles.invFamilia },
-  { rol: "Administrativo", src: "/images/diagnostico/administrativo.png", className: styles.invAdministrativo },
+  { rol: "Directivos", src: "/images/diagnostico/directiva.webp", className: styles.invDirectivos },
+  { rol: "Docentes", src: "/images/diagnostico/docente.webp", className: styles.invDocentes },
+  { rol: "Estudiante", src: "/images/diagnostico/estudiante.webp", className: styles.invEstudiante },
+  { rol: "Familia", src: "/images/diagnostico/familia.webp", className: styles.invFamilia },
+  { rol: "Administrativo", src: "/images/diagnostico/administrativo.webp", className: styles.invAdministrativo },
 ];
 
 // "Reciba su reporte…" (1100:7620): funciones a la izquierda y el mockup del producto a la derecha.

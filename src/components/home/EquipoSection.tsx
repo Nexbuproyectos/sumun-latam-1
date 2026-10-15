@@ -107,10 +107,10 @@ export function EquipoSection() {
     <section id="equipo" className={styles.section} aria-labelledby="equipo-title">
       <div className={styles.stage}>
         <div className={`${styles.decor} ${styles.decorTop}`} aria-hidden="true" data-parallax="slow">
-          <img src="/images/banner/decorativo-3d.png" alt="" />
+          <img src="/images/banner/decorativo-3d.webp" alt="" />
         </div>
         <div className={`${styles.decor} ${styles.decorBottom}`} aria-hidden="true" data-parallax="fast">
-          <img src="/images/banner/decorativo-3d.png" alt="" />
+          <img src="/images/banner/decorativo-3d.webp" alt="" />
         </div>
 
         <div className={styles.content}>

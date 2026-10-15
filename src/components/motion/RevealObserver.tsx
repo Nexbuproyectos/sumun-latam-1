@@ -36,6 +36,12 @@ export function RevealObserver() {
       if (el.getClientRects().length === 0) {
         return false;
       }
+      // Lo que ya está en pantalla al montar se queda como está: ya entró con la página.
+      // Ocultarlo para volver a animarlo hacía que el título apareciera, desapareciera y volviera.
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        return false;
+      }
       // Decorativos, paneles de pestañas (cambian de contenido) y ocultos quedan fuera.
       return !el.closest("[aria-hidden='true'], [data-no-reveal], [role='tabpanel'], [hidden]");
     });

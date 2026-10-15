@@ -16,7 +16,7 @@ export function CompromisoSection({ buttonLabel = "Conoce la marca", buttonHref 
       <div className={styles.stage}>
         <div className={styles.visual} aria-hidden="true">
           <div className={styles.decor} data-parallax="slow">
-            <img src="/images/banner/decorativo-3d.png" alt="" />
+            <img src="/images/banner/decorativo-3d.webp" alt="" />
           </div>
           <div className={styles.nino}>
             <Image src="/images/home-extra/columpio.png" width={1536} height={1024} sizes="855px" alt="" />

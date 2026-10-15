@@ -37,12 +37,12 @@ export function PasosSection({ lead = LEAD, ctaHref = "#registro", compact = fal
       <div className={styles.stage}>
         <div className={`${styles.decor} ${styles.decorIzq}`} aria-hidden="true">
           <div className={styles.decorInner}>
-            <img src="/images/banner/decorativo-3d.png" alt="" />
+            <img src="/images/banner/decorativo-3d.webp" alt="" />
           </div>
         </div>
         <div className={`${styles.decor} ${styles.decorDer}`} aria-hidden="true">
           <div className={styles.decorInner}>
-            <img src="/images/banner/decorativo-3d.png" alt="" />
+            <img src="/images/banner/decorativo-3d.webp" alt="" />
           </div>
         </div>
 

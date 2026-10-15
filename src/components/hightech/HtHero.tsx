@@ -9,7 +9,7 @@ export function HtHero() {
         {/* Elemento 3D + niño en el columpio, girado -3.21° (como en Figma). */}
         <div className={styles.visual} aria-hidden="true">
           <div className={styles.visualInner} data-parallax="slow">
-            <img className={styles.decor} src="/images/banner/decorativo-3d.png" alt="" />
+            <img className={styles.decor} src="/images/banner/decorativo-3d.webp" alt="" />
             <div className={styles.nino}>
               <Image src="/images/home-extra/columpio.png" width={1536} height={1024} sizes="1000px" alt="" preload />
             </div>

@@ -382,3 +382,33 @@
     animation: none;
   }
 }
+
+/*
+ * Primera carga: las capas del visual (anillo, niño, vidrio) esperan a estar todas listas
+ * y entran juntas con un fundido. Sin esto el niño se pintaba de a franjas y el banner se armaba a pedazos.
+ * Si el JavaScript no llegara a correr, aparecen igual a los 4 s.
+ */
+.section img[data-layer] {
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.objeto[data-layer] {
+  transition-delay: 0.1s;
+}
+
+.layersPending img[data-layer] {
+  opacity: 0;
+  animation: layers-fallback 0.6s ease 4s forwards;
+}
+
+@keyframes layers-fallback {
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section img[data-layer] {
+    transition: none;
+  }
+}

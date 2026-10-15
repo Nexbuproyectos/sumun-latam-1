@@ -44,7 +44,7 @@ export function HabilidadesSection({
         <img
           className={styles.corazon}
           data-parallax="slow"
-          src="/images/inteligencia/corazon.png"
+          src="/images/inteligencia/corazon.webp"
           alt=""
           width={376}
           height={333}

@@ -2,6 +2,7 @@
 
 import { PortableText, type PortableTextComponents } from "@portabletext/react";
 import { useEffect, useRef, useState } from "react";
+import { preload } from "react-dom";
 
 import type { BannerSlide } from "@/sanity/lib/banner";
 
@@ -25,6 +26,8 @@ const textComponents: PortableTextComponents = {
   },
 };
 
+const MASK_URL = "/images/banner/anillo-frente-mask.svg";
+
 export function BannerSlider({ slides }: { slides: BannerSlide[] }) {
   const count = slides.length;
   const multi = count > 1;
@@ -35,6 +38,43 @@ export function BannerSlider({ slides }: { slides: BannerSlide[] }) {
   const [dragging, setDragging] = useState(false);
 
   const slide = slides[index] ?? slides[0];
+  const stageRef = useRef<HTMLDivElement>(null);
+  // Las capas del visual (anillo, niño, vidrio) aparecen juntas cuando todas cargaron, no a pedazos.
+  const [layersReady, setLayersReady] = useState(false);
+
+  // Se piden con prioridad alta desde el <head>, antes de que el navegador llegue al <img>.
+  const first = slides[0];
+  if (first) {
+    preload(first.imageUrl, { as: "image", fetchPriority: "high" });
+    if (first.backgroundUrl) {
+      preload(first.backgroundUrl, { as: "image", fetchPriority: "high" });
+    }
+  }
+  preload("/images/banner/anillo-frente.webp", { as: "image", fetchPriority: "high" });
+  // La máscara CSS del anillo delantero se pide en modo CORS: el preload tiene que coincidir.
+  preload(MASK_URL, { as: "image", fetchPriority: "high", crossOrigin: "anonymous" });
+
+  useEffect(() => {
+    const root = stageRef.current;
+    if (!root) {
+      return;
+    }
+    let cancelled = false;
+    // decode() espera a que la imagen esté descargada y lista para pintarse de una sola vez.
+    const layers = Array.from(root.querySelectorAll<HTMLImageElement>("img[data-layer]"));
+    // También la máscara: si el anillo llega antes que ella, se ve un instante sin recortar.
+    const mask = new Image();
+    mask.crossOrigin = "anonymous";
+    mask.src = MASK_URL;
+    Promise.all([...layers, mask].map((img) => img.decode().catch(() => undefined))).then(() => {
+      if (!cancelled) {
+        setLayersReady(true);
+      }
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   useEffect(() => {
     if (!multi || paused || dragging) {
@@ -97,7 +137,8 @@ export function BannerSlider({ slides }: { slides: BannerSlide[] }) {
 
   return (
     <section
-      className={styles.section}
+      className={layersReady ? styles.section : `${styles.section} ${styles.layersPending}`}
+      data-img-group
       aria-roledescription="carrusel"
       aria-label="Banner"
       onMouseEnter={() => setPaused(true)}
@@ -108,20 +149,20 @@ export function BannerSlider({ slides }: { slides: BannerSlide[] }) {
       onPointerCancel={onPointerUp}
     >
       <div className={dragging ? styles.bannerDragging : styles.banner}>
-        <div className={styles.stage}>
+        <div ref={stageRef} className={styles.stage}>
           <div className={styles.decorClip} aria-hidden="true">
             <div className={`${styles.decor} ${styles.decorA}`}>
-              <img src="/images/banner/decorativo-3d.png" alt="" draggable={false} />
+              <img src="/images/banner/decorativo-3d.webp" alt="" draggable={false} data-layer />
             </div>
             <div className={`${styles.decor} ${styles.decorB}`}>
-              <img src="/images/banner/decorativo-3d.png" alt="" draggable={false} />
+              <img src="/images/banner/decorativo-3d.webp" alt="" draggable={false} data-layer />
             </div>
           </div>
 
           <div key={slide.id} className={styles.visual}>
             {slide.backgroundUrl ? (
               <div className={styles.fondo} aria-hidden="true">
-                <img src={slide.backgroundUrl} alt="" draggable={false} />
+                <img src={slide.backgroundUrl} alt="" draggable={false} fetchPriority="high" data-layer />
               </div>
             ) : null}
             <div className={styles.objetoBox}>
@@ -130,6 +171,8 @@ export function BannerSlider({ slides }: { slides: BannerSlide[] }) {
                 src={slide.imageUrl}
                 alt={slide.imageAlt}
                 draggable={false}
+                fetchPriority="high"
+                data-layer
               />
             </div>
             <div className={styles.visualFade} />
@@ -140,7 +183,7 @@ export function BannerSlider({ slides }: { slides: BannerSlide[] }) {
 
           {/* Tramo delantero del anillo: pasa por delante del niño y tapa el corte inferior (Mask group en Figma). */}
           <div className={styles.anilloFrente} aria-hidden="true">
-            <img src="/images/banner/anillo-frente.png" alt="" draggable={false} />
+            <img src="/images/banner/anillo-frente.webp" alt="" draggable={false} fetchPriority="high" data-layer />
           </div>
 
           <img className={`${styles.dotCyan} ${styles.dotCyanD}`} src="/images/banner/punto.svg" alt="" />

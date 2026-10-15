@@ -6,25 +6,25 @@ const estadios = [
   {
     title: "Integrador",
     text: "La IA está integrada en procesos clave y genera impacto medible",
-    img: "/images/diagnostico/madurez-integrador.png",
+    img: "/images/diagnostico/madurez-integrador.webp",
     className: styles.integrador,
   },
   {
     title: "Transformador",
     text: "La IA impulsa la innovación y la mejora continua en toda la institución",
-    img: "/images/diagnostico/madurez-transformador.png",
+    img: "/images/diagnostico/madurez-transformador.webp",
     className: styles.transformador,
   },
   {
     title: "Inicial",
     text: "Uso incipiente y exploratorio de herramientas de IA",
-    img: "/images/diagnostico/madurez-inicial.png",
+    img: "/images/diagnostico/madurez-inicial.webp",
     className: styles.inicial,
   },
   {
     title: "En desarrollo",
     text: "La IA se utiliza de forma aislada en algunas áreas de la institución",
-    img: "/images/diagnostico/madurez-desarrollo.png",
+    img: "/images/diagnostico/madurez-desarrollo.webp",
     className: styles.desarrollo,
   },
 ];

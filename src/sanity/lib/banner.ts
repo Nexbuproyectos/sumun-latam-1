@@ -15,8 +15,8 @@ export type BannerSlide = {
   backgroundUrl?: string;
 };
 
-const fallbackImage = "/images/banner/nino.png";
-const fallbackBackground = "/images/banner/anillo.png";
+const fallbackImage = "/images/banner/nino.webp";
+const fallbackBackground = "/images/banner/anillo.webp";
 
 function block(
   key: string,

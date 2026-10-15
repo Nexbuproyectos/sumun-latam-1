@@ -122,10 +122,10 @@ export function EquipoSection() {
     >
       <div className={styles.stage}>
         <div className={`${styles.decor} ${styles.decorTop}`} aria-hidden="true">
-          <img src="/images/identidad/equipo/decorativo-3d.png" alt="" />
+          <img src="/images/identidad/equipo/decorativo-3d.webp" alt="" />
         </div>
         <div className={`${styles.decor} ${styles.decorBottom}`} aria-hidden="true">
-          <img src="/images/identidad/equipo/decorativo-3d.png" alt="" />
+          <img src="/images/identidad/equipo/decorativo-3d.webp" alt="" />
         </div>
 
         <div className={styles.content}>

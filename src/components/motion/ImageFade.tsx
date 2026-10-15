@@ -26,7 +26,8 @@ export function ImageFade() {
     const timers = new Set<number>();
 
     const prepare = (img: HTMLImageElement) => {
-      if (img.dataset.imgFade || (img.complete && img.naturalWidth > 0)) {
+      // Los grupos con su propia entrada (p. ej. las capas del banner) no se tocan.
+      if (img.dataset.imgFade || (img.complete && img.naturalWidth > 0) || img.closest("[data-img-group]")) {
         return;
       }
       img.dataset.imgFade = "pending";

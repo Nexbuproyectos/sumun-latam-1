@@ -56,7 +56,7 @@ export function HeroSection() {
           alt="Estudiar teoría: quiero repasar conceptos teóricos"
         />
         <p className={`${styles.pill} ${styles.explicame}`}>
-          <img src="/images/tutor-ia/explicame-emoji.png" alt="" width={40} height={40} />
+          <img src="/images/tutor-ia/explicame-emoji.webp" alt="" width={40} height={40} />
           Explícame
         </p>
         <Image
@@ -92,7 +92,7 @@ export function HeroSection() {
           alt="Revisar conceptos: refuerza conceptos que no tienes claros"
         />
         <p className={`${styles.pill} ${styles.ayudame}`}>
-          <img src="/images/tutor-ia/ayudame-emoji.png" alt="" width={40} height={40} />
+          <img src="/images/tutor-ia/ayudame-emoji.webp" alt="" width={40} height={40} />
           Ayúdame con
         </p>
         <Image

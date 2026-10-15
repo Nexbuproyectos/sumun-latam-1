@@ -22,7 +22,7 @@ export function CulturaCardsSection() {
       <div className={styles.grid}>
         <div className={styles.row1}>
           <article className={`${styles.card} ${styles.cardClima}`}>
-            <img data-parallax="slow" className={styles.corazon} src="/images/inteligencia/corazon.png" alt="" width={409} height={361} aria-hidden="true" />
+            <img data-parallax="slow" className={styles.corazon} src="/images/inteligencia/corazon.webp" alt="" width={409} height={361} aria-hidden="true" />
             <h3 className={styles.cardTitle}>Mejor clima escolar</h3>
             <p className={`${styles.cardSub} ${styles.subClima}`}>Donde cada uno es bienvenido</p>
           </article>

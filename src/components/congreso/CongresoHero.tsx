@@ -21,7 +21,7 @@ export function CongresoHero() {
         <div className={styles.fondoStage}>
           <div className={styles.decor}>
             <div className={styles.decorInner}>
-              <img src="/images/banner/decorativo-3d.png" alt="" />
+              <img src="/images/banner/decorativo-3d.webp" alt="" />
             </div>
           </div>
           <div className={styles.circulo} data-parallax="slow">
@@ -50,7 +50,7 @@ export function CongresoHero() {
       <div className={styles.content}>
         <div className={styles.logos}>
           <span className={styles.logoSumun}>
-            <img src="/images/congreso/logo-sumun.png" alt="Sumun" />
+            <img src="/images/congreso/logo-sumun.webp" alt="Sumun" />
           </span>
           <img className={styles.divisor} src="/images/congreso/divisor.svg" alt="" aria-hidden="true" width={0.288} height={71} />
           <img

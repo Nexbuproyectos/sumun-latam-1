@@ -37,7 +37,7 @@ const roles: Rol[] = [
   {
     id: "directivos",
     label: "Directivos",
-    photo: { src: "/images/diagnostico/directiva.png", box: styles.fotoDirectivos, img: styles.imgDirectivos },
+    photo: { src: "/images/diagnostico/directiva.webp", box: styles.fotoDirectivos, img: styles.imgDirectivos },
     beneficios: [
       { icon: "cpu", title: "Tomamos decisiones con evidencia", text: "Contamos con una lectura clara del nivel de madurez en IA para definir prioridades estratégicas." },
       { icon: "trending", title: "Proyectamos el crecimiento institucional", text: "Identificamos oportunidades para integrar la IA en el plan de desarrollo de la institución." },
@@ -49,7 +49,7 @@ const roles: Rol[] = [
   {
     id: "estudiantes",
     label: "Estudiantes",
-    photo: { src: "/images/diagnostico/estudiante.png", box: styles.fotoEstudiantes, img: styles.imgEstudiantes },
+    photo: { src: "/images/diagnostico/estudiante.webp", box: styles.fotoEstudiantes, img: styles.imgEstudiantes },
     beneficios: [
       { icon: "cpu", title: "Nuestra voz también cuenta", text: "Compartimos cómo usamos la IA para aprender dentro y fuera del aula." },
       { icon: "trending", title: "Aprendemos mejor", text: "Ayudamos a identificar dónde la IA puede potenciar nuestro aprendizaje." },
@@ -61,7 +61,7 @@ const roles: Rol[] = [
   {
     id: "docentes",
     label: "Docentes",
-    photo: { src: "/images/diagnostico/docente.png", box: styles.fotoDocentes, img: styles.imgDocentes },
+    photo: { src: "/images/diagnostico/docente.webp", box: styles.fotoDocentes, img: styles.imgDocentes },
     beneficios: [
       { icon: "cpu", title: "Visibilizamos nuestras prácticas", text: "Mostramos cómo la IA ya forma parte de la planificación, la enseñanza y la evaluación." },
       { icon: "trending", title: "Ganamos tiempo para enseñar", text: "Detectamos tareas que la IA puede simplificar para enfocarnos en los estudiantes." },
@@ -73,7 +73,7 @@ const roles: Rol[] = [
   {
     id: "familia",
     label: "Familia",
-    photo: { src: "/images/diagnostico/familia.png", box: styles.fotoFamilia, img: styles.imgFamilia },
+    photo: { src: "/images/diagnostico/familia.webp", box: styles.fotoFamilia, img: styles.imgFamilia },
     beneficios: [
       { icon: "cpu", title: "Acompañamos el aprendizaje en casa", text: "Contamos cómo se usa la IA en el hogar y en las tareas escolares." },
       { icon: "trending", title: "Nos informamos y participamos", text: "Entendemos cómo la institución integra la inteligencia artificial en la formación." },
@@ -85,7 +85,7 @@ const roles: Rol[] = [
   {
     id: "administrativo",
     label: "Administrativo",
-    photo: { src: "/images/diagnostico/administrativo.png", box: styles.fotoAdministrativo, img: styles.imgAdministrativo },
+    photo: { src: "/images/diagnostico/administrativo.webp", box: styles.fotoAdministrativo, img: styles.imgAdministrativo },
     beneficios: [
       { icon: "cpu", title: "Nuestro trabajo también impulsa la evolución", text: "Hacemos visible cómo la inteligencia artificial impacta los procesos administrativos, operativos y de gestión." },
       { icon: "trending", title: "Ganamos eficiencia en nuestro día a día", text: "Detectamos oportunidades de eficiencia sin perder el foco en el servicio a la comunidad." },
@@ -204,7 +204,7 @@ export function ComunidadSection() {
 
       {/* Onda de vidrio (1439 × 778, estirada como en Figma): pasa por encima del modelo de madurez. */}
       <div className={styles.onda} aria-hidden="true">
-        <img src="/images/diagnostico/onda.png" alt="" />
+        <img src="/images/diagnostico/onda.webp" alt="" />
       </div>
     </section>
   );

@@ -15,7 +15,7 @@ export function CulturasSection() {
   return (
     <section className={styles.section} aria-labelledby="culturas-title">
       <div className={styles.decor} aria-hidden="true" data-parallax="fast">
-        <img src="/images/banner/decorativo-3d.png" alt="" />
+        <img src="/images/banner/decorativo-3d.webp" alt="" />
       </div>
 
       <div className={styles.stage}>

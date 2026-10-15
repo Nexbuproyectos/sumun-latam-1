@@ -20,7 +20,7 @@ export function DiagHero() {
         <div className={styles.decorStage}>
           <div className={styles.decor}>
             <div className={styles.decorInner}>
-              <img src="/images/banner/decorativo-3d.png" alt="" />
+              <img src="/images/banner/decorativo-3d.webp" alt="" />
             </div>
           </div>
         </div>
@@ -58,7 +58,7 @@ export function DiagHero() {
           </div>
           <div className={styles.directiva}>
             <Image
-              src="/images/diagnostico/directiva.png"
+              src="/images/diagnostico/directiva.webp"
               width={1008}
               height={1068}
               sizes="744px"

@@ -95,10 +95,10 @@ export function Header() {
     const prefetchAll = () => PREFETCH_ROUTES.forEach((href) => router.prefetch(href));
     // Safari no tiene requestIdleCallback: ahí se usa un timeout.
     if (typeof window.requestIdleCallback === "function") {
-      const id = window.requestIdleCallback(prefetchAll, { timeout: 2500 });
+      const id = window.requestIdleCallback(prefetchAll, { timeout: 1000 });
       return () => window.cancelIdleCallback(id);
     }
-    const timer = setTimeout(prefetchAll, 1200);
+    const timer = setTimeout(prefetchAll, 600);
     return () => clearTimeout(timer);
   }, [router]);
   const pill = PILL_ROUTES.includes(pathname);
@@ -142,9 +142,13 @@ export function Header() {
   }, []);
 
   // Pequeña demora al cerrar para que el mouse pueda pasar del link al panel.
+  // Al abrir un menú se precargan sus páginas (por si el usuario hace click antes de la precarga general).
   const openMenu = (label: string) => {
     window.clearTimeout(closeTimer.current);
     setMenu(label);
+    navItems
+      .find((item) => item.label === label)
+      ?.items?.forEach((sub) => router.prefetch(sub.href.split("#")[0] || "/"));
   };
   const scheduleClose = () => {
     window.clearTimeout(closeTimer.current);

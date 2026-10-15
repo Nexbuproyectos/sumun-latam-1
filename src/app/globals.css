@@ -157,11 +157,11 @@ html {
   animation: page-in 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.08s both;
 }
 
+/* Sin filter: blur: desenfocar una captura de pantalla completa es carísimo para la GPU y da tirones. */
 @keyframes page-out {
   to {
     opacity: 0;
     translate: 0 -16px;
-    filter: blur(3px);
     scale: 0.985;
   }
 }
@@ -170,23 +170,17 @@ html {
   from {
     opacity: 0;
     translate: 0 28px;
-    filter: blur(5px);
     scale: 0.99;
   }
 }
 
-/* Imágenes: entrada suave la primera vez que aparecen (menos “pop”). */
-main img {
-  animation: img-fade-in 0.5s ease both;
+/* Imágenes que todavía no cargaron: invisibles hasta que llegan y entonces aparecen con un fundido (ImageFade). */
+img[data-img-fade="pending"] {
+  opacity: 0 !important;
 }
 
-@keyframes img-fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+img[data-img-fade="in"] {
+  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1) !important;
 }
 
 /* El header queda fijo durante la transición. */
@@ -209,8 +203,7 @@ main img {
   }
 
   [data-parallax],
-  .scroll-progress,
-  main img {
+  .scroll-progress {
     animation: none !important;
   }
 

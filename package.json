@@ -5,8 +5,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "eslint"
+    "start": "node scripts/start.mjs",
+    "lint": "eslint",
+    "start:next": "next start",
+    "warm-images": "node scripts/warm-images.mjs"
   },
   "dependencies": {
     "@sanity/image-url": "^2.1.1",

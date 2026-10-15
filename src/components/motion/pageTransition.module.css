@@ -2,24 +2,23 @@
   min-height: 40vh;
 }
 
-.entering {
-  opacity: 0;
-  translate: 0 18px;
+/*
+ * Primera carga: fundido desde abajo. `backwards` aplica el estado inicial desde el primer
+ * cuadro y al terminar no deja ningún transform puesto (no crea contenedores para fixed/sticky).
+ */
+.firstPaint {
+  animation: first-paint 0.6s cubic-bezier(0.22, 1, 0.36, 1) backwards;
 }
 
-.ready {
-  opacity: 1;
-  translate: 0 0;
-  transition:
-    opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
-    translate 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+@keyframes first-paint {
+  from {
+    opacity: 0;
+    translate: 0 18px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .entering,
-  .ready {
-    opacity: 1;
-    translate: none;
-    transition: none;
+  .firstPaint {
+    animation: none;
   }
 }

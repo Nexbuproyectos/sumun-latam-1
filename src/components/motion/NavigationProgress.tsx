@@ -47,13 +47,7 @@ export function NavigationProgress() {
       setDone(false);
       setActive(true);
       // Por si la navegación falla o es tan cacheada que no dispara cambio.
-      safetyTimer.current = window.setTimeout(() => {
-        setDone(true);
-        hideTimer.current = window.setTimeout(() => {
-          setActive(false);
-          setDone(false);
-        }, 280);
-      }, 8000);
+      safetyTimer.current = window.setTimeout(() => setDone(true), 8000);
     }
 
     document.addEventListener("click", onClick, true);
@@ -64,15 +58,25 @@ export function NavigationProgress() {
     };
   }, []);
 
+  // Llegó la página nueva: la barra se completa (ajuste durante el render, sin efecto en cascada).
+  const [lastPath, setLastPath] = useState(pathname);
+  if (lastPath !== pathname) {
+    setLastPath(pathname);
+    if (active) {
+      setDone(true);
+    }
+  }
+
+  // Completa: se desvanece y se oculta.
   useEffect(() => {
-    if (!active) return;
+    if (!done) return;
     window.clearTimeout(safetyTimer.current);
-    setDone(true);
     hideTimer.current = window.setTimeout(() => {
       setActive(false);
       setDone(false);
     }, 320);
-  }, [pathname]); // eslint-disable-line react-hooks/exhaustive-deps -- solo al cambiar ruta
+    return () => window.clearTimeout(hideTimer.current);
+  }, [done]);
 
   if (!active && !done) return null;
 

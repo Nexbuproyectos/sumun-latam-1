@@ -1,0 +1,53 @@
+.bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  height: 3px;
+  width: 0;
+  pointer-events: none;
+  background: linear-gradient(90deg, #00b9ff 0%, #0083af 50%, #f15a2e 100%);
+  box-shadow: 0 0 12px rgba(0, 185, 255, 0.45);
+}
+
+.loading {
+  animation: progress-load 1.1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.done {
+  animation: progress-done 0.32s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes progress-load {
+  0% {
+    width: 0;
+    opacity: 1;
+  }
+  20% {
+    width: 28%;
+  }
+  55% {
+    width: 68%;
+  }
+  100% {
+    width: 82%;
+    opacity: 1;
+  }
+}
+
+@keyframes progress-done {
+  from {
+    width: 82%;
+    opacity: 1;
+  }
+  to {
+    width: 100%;
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bar {
+    display: none;
+  }
+}

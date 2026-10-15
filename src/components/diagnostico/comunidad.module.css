@@ -1,0 +1,463 @@
+/* Sección de Figma: de y 1374 (fin de los pasos) a y 2539 (inicio del modelo de madurez). */
+.section {
+  position: relative;
+  z-index: 2;
+}
+
+.stage {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1439px;
+  height: 1165px;
+  margin: 0 auto;
+  padding-top: 94px;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  width: 1120px;
+  max-width: calc(100% - 48px);
+  color: #004656;
+  font-family: var(--font-figtree), sans-serif;
+  line-height: normal;
+  text-align: center;
+}
+
+.title {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.lead {
+  width: 732px;
+  max-width: 100%;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+/* Card Grid: 1223 × 719 en (109, 1603). */
+.grid {
+  position: relative;
+  display: flex;
+  gap: 61px;
+  box-sizing: border-box;
+  width: 1223px;
+  height: 719px;
+  margin-top: 37px;
+  padding: 40px 0 0 53px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  background: #fff;
+}
+
+.roles {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 506px;
+  flex-shrink: 0;
+}
+
+.rol {
+  position: relative;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  height: 112px;
+  padding: 0 0 0 147.78px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  background: #f8fafc;
+  color: #004656;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    translate 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.3s ease;
+}
+
+.rol:hover {
+  translate: 4px 0;
+  box-shadow: 0 12px 24px -18px rgba(0, 70, 86, 0.45);
+}
+
+.rol:focus-visible {
+  outline: 3px solid #00b9ff;
+  outline-offset: 2px;
+}
+
+.rolActivo {
+  background: #004656;
+  color: #fefefe;
+}
+
+.rolLabel {
+  position: relative;
+  font-family: var(--font-figtree), sans-serif;
+  font-size: 27.35px;
+  font-weight: 700;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+/* Flecha de 42px en (409, 32) girada 90°: solo en la pestaña activa. */
+.flecha {
+  position: absolute;
+  top: 32px;
+  left: 409px;
+  width: 29.28px;
+  height: 28.14px;
+  margin: 6.93px 6.36px;
+  opacity: 0;
+  rotate: 90deg;
+  translate: -8px 0;
+  transition:
+    opacity 0.3s ease,
+    translate 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.rolActivo .flecha {
+  opacity: 1;
+  translate: 0 0;
+}
+
+/* Fotos: cajas y recortes de Figma, espejadas (rotate 180° + flip vertical). */
+.foto {
+  position: absolute;
+  overflow: hidden;
+  transform: scaleX(-1);
+}
+
+.foto img {
+  position: absolute;
+  max-width: none;
+}
+
+.fotoDirectivos {
+  top: -3.5px;
+  left: 3px;
+  width: 126px;
+  height: 176px;
+}
+
+.imgDirectivos {
+  top: -3.38%;
+  left: -15.92%;
+  width: 131.84%;
+  height: 100%;
+}
+
+.fotoEstudiantes {
+  top: 1px;
+  left: 3px;
+  width: 127px;
+  height: 177px;
+}
+
+.imgEstudiantes {
+  top: -0.01%;
+  left: 0.79%;
+  width: 98.41%;
+  height: 87.66%;
+}
+
+.fotoDocentes {
+  top: -3.5px;
+  left: 3px;
+  width: 126px;
+  height: 176px;
+}
+
+.imgDocentes {
+  top: -4.44%;
+  left: -68.33%;
+  width: 243.74%;
+  height: 109.99%;
+}
+
+.fotoFamilia {
+  top: -1.25px;
+  left: 3px;
+  width: 128px;
+  height: 178px;
+}
+
+.imgFamilia {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.fotoAdministrativo {
+  top: -8.75px;
+  left: -1px;
+  width: 130px;
+  height: 182px;
+}
+
+.imgAdministrativo {
+  top: -0.02%;
+  left: -58.84%;
+  width: 213.67%;
+  height: 102.01%;
+}
+
+.beneficios {
+  display: flex;
+  flex-direction: column;
+  gap: 19px;
+  box-sizing: border-box;
+  width: 507px;
+  height: 632px;
+  margin: 0;
+  padding: 18px 0;
+  list-style: none;
+}
+
+.beneficio {
+  display: flex;
+  flex: 1 0 0;
+  gap: 18px;
+  align-items: center;
+  box-sizing: border-box;
+  min-height: 0;
+  padding: 16px 20px;
+  border: 1px solid #eee;
+  border-radius: 16px;
+  background: #fefefe;
+  filter: drop-shadow(0 8px 8px rgba(0, 70, 86, 0.02));
+  animation: beneficio-in 0.45s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+
+.beneficio:nth-child(2) {
+  animation-delay: 50ms;
+}
+
+.beneficio:nth-child(3) {
+  animation-delay: 100ms;
+}
+
+.beneficio:nth-child(4) {
+  animation-delay: 150ms;
+}
+
+.beneficio:nth-child(5) {
+  animation-delay: 200ms;
+}
+
+@keyframes beneficio-in {
+  from {
+    opacity: 0;
+    translate: 12px 0;
+  }
+}
+
+.badge {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 16px;
+}
+
+.beneficioText {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.beneficioTitle {
+  color: #004656;
+  font-family: var(--font-figtree), sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+.beneficioDesc {
+  color: #696969;
+  font-family: var(--font-manrope), sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 18px;
+}
+
+/* "Registrar institución": (615, 2349), por encima de la onda. */
+.button {
+  position: absolute;
+  top: 975px;
+  left: 615.34px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  height: 50.85px;
+  padding: 12.93px 22.16px;
+  border: 1px solid #89d5f1;
+  border-radius: 92.32px;
+  background: #fff;
+  color: #0095cd;
+  font-family: var(--font-manrope), sans-serif;
+  font-size: 16.62px;
+  font-weight: 700;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+/* Onda: 1439 × 778 en y 1968 (594px dentro de la sección); baja 207px sobre el modelo. */
+.onda {
+  position: absolute;
+  top: 594px;
+  left: 50%;
+  z-index: 2;
+  width: max(1439px, 100vw);
+  height: 778px;
+  pointer-events: none;
+  translate: -50% 0;
+}
+
+.onda img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 1280px) {
+  .grid {
+    width: calc(100% - 48px);
+    gap: 32px;
+    padding: 40px 32px 0;
+  }
+
+  .roles {
+    width: auto;
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .beneficios {
+    width: auto;
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .flecha {
+    left: auto;
+    right: 24px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .stage {
+    height: auto;
+    padding: 80px 0 380px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .lead {
+    font-size: 16px;
+  }
+
+  .grid {
+    flex-direction: column;
+    gap: 24px;
+    height: auto;
+    padding: 24px;
+  }
+
+  .beneficios {
+    height: auto;
+    padding: 0;
+    gap: 12px;
+  }
+
+  .beneficio {
+    flex: none;
+  }
+
+  .button {
+    position: relative;
+    top: auto;
+    left: auto;
+    margin-top: 32px;
+  }
+
+  .onda {
+    top: auto;
+    bottom: -120px;
+    width: 900px;
+    height: 487px;
+  }
+}
+
+@media (max-width: 600px) {
+  .stage {
+    padding-bottom: 240px;
+  }
+
+  .grid {
+    width: calc(100% - 32px);
+    padding: 16px;
+  }
+
+  .roles {
+    gap: 10px;
+  }
+
+  .rol {
+    height: 80px;
+    padding-left: 104px;
+  }
+
+  .rolLabel {
+    font-size: 21px;
+  }
+
+  /* Las fotos se achican a 0.72 manteniendo su recorte. */
+  .foto {
+    zoom: 0.72;
+  }
+
+  .flecha {
+    top: 18px;
+    right: 12px;
+  }
+
+  .beneficio {
+    padding: 14px 16px;
+  }
+
+  .onda {
+    bottom: -80px;
+    width: 620px;
+    height: 335px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .beneficio {
+    animation: none;
+  }
+}

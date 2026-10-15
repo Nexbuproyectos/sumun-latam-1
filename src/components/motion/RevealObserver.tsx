@@ -32,6 +32,10 @@ export function RevealObserver() {
         }
         parent = parent.parentElement;
       }
+      // Sin caja (oculto por CSS en este tamaño de pantalla): nunca se cruzaría con la pantalla.
+      if (el.getClientRects().length === 0) {
+        return false;
+      }
       // Decorativos, paneles de pestañas (cambian de contenido) y ocultos quedan fuera.
       return !el.closest("[aria-hidden='true'], [data-no-reveal], [role='tabpanel'], [hidden]");
     });
@@ -48,10 +52,16 @@ export function RevealObserver() {
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
+          const el = entry.target as HTMLElement;
           if (!entry.isIntersecting) {
+            // Ya quedó por encima de la pantalla (llegada por ancla o scroll restaurado): se muestra sin animar.
+            if (entry.boundingClientRect.bottom < 0) {
+              observer.unobserve(el);
+              delete el.dataset.reveal;
+              el.style.removeProperty("--reveal-delay");
+            }
             continue;
           }
-          const el = entry.target as HTMLElement;
           observer.unobserve(el);
           el.dataset.reveal = "in";
           el.addEventListener(

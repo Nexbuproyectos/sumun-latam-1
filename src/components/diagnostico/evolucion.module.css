@@ -1,0 +1,273 @@
+/* Frame de Figma: 1439 × 1034 desde y 5978; contenido de 1200px en (120, 113). */
+.section {
+  position: relative;
+}
+
+.stage {
+  display: flex;
+  flex-direction: column;
+  gap: 63px;
+  width: min(1200px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 113px 0 78px;
+}
+
+.header {
+  display: flex;
+  gap: 32px;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  width: 768px;
+  max-width: 100%;
+  color: #003d4c;
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-figtree), sans-serif;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 49px;
+  text-box: trim-both cap alphabetic;
+}
+
+.lead {
+  width: 663px;
+  max-width: 100%;
+  margin: 0;
+  font-family: var(--font-manrope), sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* Flechas: 2 botones de 48px repartidos en 127px, 8px por encima del borde (en Figma terminan en y 214). */
+.arrows {
+  display: flex;
+  flex-shrink: 0;
+  justify-content: space-between;
+  width: 127px;
+  margin-right: 8px;
+}
+
+.arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  padding: 12px;
+  border: 1px solid #eee;
+  border-radius: 50px;
+  background: #f15a2e;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    opacity 0.2s ease,
+    translate 0.2s ease;
+}
+
+.arrow:hover:not(:disabled) {
+  background: #d9481f;
+  translate: 0 -2px;
+}
+
+.arrow:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.arrow:focus-visible {
+  outline: 3px solid #00b9ff;
+  outline-offset: 2px;
+}
+
+/* El SVG apunta hacia arriba. */
+.arrowPrev {
+  rotate: -90deg;
+}
+
+.arrowNext {
+  rotate: 90deg;
+}
+
+/* La pista sigue hasta el borde derecho de la pantalla, como en Figma. */
+.viewport {
+  margin-right: calc((100% - 100vw) / 2);
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.viewport::-webkit-scrollbar {
+  display: none;
+}
+
+.viewport:focus-visible {
+  outline: 3px solid #00b9ff;
+  outline-offset: 4px;
+  border-radius: 20px;
+}
+
+.track {
+  display: flex;
+  gap: 40px;
+  width: max-content;
+  margin: 0;
+  padding: 0 calc((100vw - 100%) / 2) 0 0;
+  list-style: none;
+}
+
+.card {
+  display: flex;
+  flex-shrink: 0;
+  flex-direction: column;
+  gap: 36px;
+  height: 566px;
+  scroll-snap-align: start;
+}
+
+.media {
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  height: 350px;
+  border: 1px solid #fff;
+  border-radius: 20px;
+  background: #fff;
+}
+
+.media img {
+  position: absolute;
+  max-width: none;
+}
+
+.base {
+  top: -0.52%;
+  left: -73.03%;
+  width: 211.24%;
+  height: 150.52%;
+}
+
+.tira {
+  top: -26.45%;
+  width: 663.97%;
+  height: 237.13%;
+  transition: scale 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.card:hover .tira {
+  scale: 1.03;
+}
+
+.veloSvg {
+  top: -1px;
+  left: 8px;
+  width: 385px;
+  height: 350px;
+}
+
+.velo {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 385px;
+  height: 350px;
+  background-size: 100% 100%;
+  backdrop-filter: blur(2px);
+}
+
+.cardText {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 0 40px 0 16px;
+  color: #003d4c;
+  font-family: var(--font-manrope), sans-serif;
+}
+
+.cardTitle {
+  margin: 0;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 26px;
+  /* En Figma el título mide 367px y puede pasar sobre el margen derecho de la tarjeta. */
+  width: 367px;
+  text-box: trim-both cap alphabetic;
+}
+
+.cardDesc {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+@media (max-width: 1100px) {
+  .stage {
+    gap: 40px;
+    padding: 88px 0 72px;
+  }
+
+  .title {
+    font-size: 36px;
+    line-height: 40px;
+  }
+
+  .lead {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  .stage {
+    width: calc(100% - 32px);
+    padding: 72px 0 56px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .title {
+    font-size: 30px;
+    line-height: 34px;
+  }
+
+  .lead {
+    font-size: 17px;
+  }
+
+  .track {
+    gap: 20px;
+  }
+
+  /* En mobile cada tarjeta ocupa casi toda la pantalla y deja ver la siguiente. */
+  .card {
+    width: min(320px, calc(100vw - 64px)) !important;
+    height: auto;
+    gap: 24px;
+  }
+
+  .media {
+    height: 300px;
+  }
+
+  .cardTitle {
+    font-size: 22px;
+    width: auto;
+  }
+
+  .cardDesc {
+    font-size: 17px;
+  }
+}

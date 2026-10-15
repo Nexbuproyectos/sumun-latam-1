@@ -6,8 +6,8 @@ const columnas = [
   {
     title: "Nosotros",
     links: [
-      { label: "Nuestro equipo", href: "#" },
-      { label: "Identidad", href: "#" },
+      { label: "Nuestro equipo", href: "/#equipo" },
+      { label: "Identidad", href: "/identidad" },
     ],
   },
   {
@@ -67,7 +67,7 @@ export function Footer() {
             ))}
           </nav>
 
-          <a href="#" className={styles.tutor}>
+          <Link href="/tutor-ia" className={styles.tutor}>
             <span className={styles.tutorHead}>
               <span className={styles.tutorTitle}>
                 Tutor IA
@@ -90,7 +90,7 @@ export function Footer() {
             <span className={styles.tutorText}>
               Conoce cómo impulsamos la educación con inteligencia artificial.
             </span>
-          </a>
+          </Link>
         </div>
 
         <div className={styles.bottom}>

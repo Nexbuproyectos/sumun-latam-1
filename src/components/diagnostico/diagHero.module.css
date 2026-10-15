@@ -1,0 +1,448 @@
+/* Hero de Figma: 1440 × 773, fondo #f2f5fc. */
+.section {
+  position: relative;
+  background: #f2f5fc;
+}
+
+.clip {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.decorStage {
+  position: relative;
+  max-width: 1439px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+/* Elemento 3D: caja de 1116.2 × 1106.9 en (-469, 255); dentro, 871.2 × 702 girado 42.78° al 4%. */
+.decor {
+  position: absolute;
+  top: 255px;
+  left: -469px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1116.21px;
+  height: 1106.94px;
+}
+
+.decorInner {
+  position: relative;
+  flex: none;
+  overflow: hidden;
+  width: 871.2px;
+  height: 702px;
+  opacity: 0.04;
+  transform: rotate(42.78deg);
+}
+
+.decorInner img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 120.87%;
+  max-width: none;
+  height: 100%;
+}
+
+.stage {
+  position: relative;
+  max-width: 1439px;
+  height: 773px;
+  margin: 0 auto;
+}
+
+.copy {
+  position: absolute;
+  top: 241px;
+  left: 76px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  align-items: flex-start;
+  width: 536px;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.titles {
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+  width: 511px;
+  font-family: var(--font-figtree), sans-serif;
+  font-weight: 600;
+}
+
+.eyebrow {
+  margin: 0;
+  color: #ff6f00;
+  font-size: 30px;
+  line-height: 32px;
+  text-box: trim-both cap alphabetic;
+}
+
+/* En Figma el título mide 624px y sobresale de la columna de 536px. */
+.title {
+  width: 624px;
+  margin: 0;
+  color: #003d4c;
+  font-size: 54px;
+  font-weight: 600;
+  line-height: 52px;
+  text-box: trim-both cap alphabetic;
+}
+
+.lead {
+  margin: 0;
+  color: #003d4c;
+  font-family: var(--font-manrope), sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  text-box: trim-both cap alphabetic;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.primary,
+.secondary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  height: 50.85px;
+  padding: 12.93px 22.16px;
+  border-radius: 92.32px;
+  white-space: nowrap;
+}
+
+.primary {
+  background: #0083af;
+  color: #fefefe;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.secondary {
+  border: 1px solid #89d5f1;
+  background: #fff;
+  color: #0095cd;
+  font-family: var(--font-manrope), sans-serif;
+  font-size: 16.62px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+/* ---------- Visual: 806 × 714 en (634, 50) ---------- */
+.visual {
+  position: absolute;
+  top: 50px;
+  left: 634px;
+  overflow: hidden;
+  width: 806px;
+  height: 714px;
+  pointer-events: none;
+}
+
+.visual img {
+  max-width: none;
+}
+
+/* Círculo de paneles: 1064 × 719 en (-116, 13), girado 180°. */
+.circulo {
+  position: absolute;
+  top: 13px;
+  left: -116px;
+  overflow: hidden;
+  width: 1064px;
+  height: 719px;
+  rotate: 180deg;
+}
+
+.circulo img {
+  position: absolute;
+  top: -34.53%;
+  left: 0.05%;
+  width: 99.93%;
+  height: 134.59%;
+}
+
+/* Directiva: 744 × 788 en (12, 39), espejada. */
+.directiva {
+  position: absolute;
+  top: 39px;
+  left: 12px;
+  width: 744px;
+  height: 788px;
+  transform: scaleX(-1);
+}
+
+.directiva img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Fundido inferior: 857 × 380 en (-27, 387). */
+.velo {
+  position: absolute;
+  top: 387px;
+  left: -27px;
+  width: 857px;
+  height: 380px;
+  background: linear-gradient(to bottom, rgba(242, 245, 252, 0) 8.051%, #f2f5fc 78.395%);
+}
+
+.vidrioAlto,
+.vidrioBajo {
+  position: absolute;
+  box-sizing: border-box;
+  width: 150px;
+  border: 1px solid rgba(255, 255, 255, 0.87);
+  border-radius: 16px;
+  background-size: 100% 100%;
+}
+
+.vidrioAlto {
+  top: 206px;
+  left: 702px;
+  height: 600px;
+  box-shadow: 0 10.482px 47.403px 7px rgba(235, 250, 255, 0.6);
+}
+
+.vidrioBajo {
+  top: 355px;
+  left: 501px;
+  height: 451px;
+  box-shadow: 0 10.482px 47.403px 8.153px rgba(235, 250, 255, 0.6);
+}
+
+.elipse301,
+.elipse302 {
+  position: absolute;
+}
+
+.elipse301 {
+  top: 117px;
+  left: 164px;
+}
+
+.elipse302 {
+  top: 8px;
+  left: 50px;
+}
+
+/* Ícono de gráfico: 38 × 37 en (435, 562). */
+.chart {
+  position: absolute;
+  top: 562px;
+  left: 435px;
+  overflow: hidden;
+  box-sizing: border-box;
+  width: 38px;
+  height: 37px;
+  border: 0.376px solid #fff;
+  border-radius: 86.99px;
+}
+
+.chart img {
+  position: absolute;
+  top: calc(50% + 0.01px);
+  left: calc(50% - 1.45px);
+  transform: translate(-50%, -50%);
+}
+
+/* Íconos de vidrio: el SVG trae su sombra, por eso sobresale de la caja. */
+.icono {
+  position: absolute;
+}
+
+.icono img {
+  position: absolute;
+  display: block;
+}
+
+.people,
+.books {
+  width: 57px;
+  height: 57px;
+}
+
+.people {
+  top: 148px;
+  left: 506px;
+}
+
+.books {
+  top: 285px;
+  left: 120px;
+}
+
+.people img,
+.books img {
+  top: -11.72%;
+  left: -11.72%;
+  width: 131.04%;
+  height: 131.04%;
+}
+
+.calendar {
+  top: 495px;
+  left: 120px;
+  width: 36px;
+  height: 35px;
+}
+
+.calendar img {
+  top: -11.75%;
+  left: -11.42%;
+  width: 130.25%;
+  height: 131.12%;
+}
+
+/* Botón play: círculo de 35px en (607, 272) con dos arcos recortados. */
+.play {
+  position: absolute;
+  top: 272px;
+  left: 607px;
+  overflow: hidden;
+  box-sizing: border-box;
+  width: 35px;
+  height: 35px;
+  border: 0.222px solid rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 1.333px 1.333px 5.333px rgba(0, 0, 0, 0.1);
+}
+
+.playE53,
+.playE54 {
+  position: absolute;
+}
+
+.playE53 {
+  top: 21.96px;
+  left: 20.31px;
+  width: 225.1px;
+  height: 225.1px;
+}
+
+.playE54 {
+  top: 14.23px;
+  left: 12.58px;
+  width: 240.55px;
+  height: 240.55px;
+}
+
+.playIcon {
+  position: absolute;
+  top: calc(50% - 0.05px);
+  left: calc(50% - 0.06px);
+  overflow: hidden;
+  width: 17.655px;
+  height: 17.655px;
+  transform: translate(-50%, -50%);
+}
+
+.playIcon img {
+  position: absolute;
+  top: 14.43%;
+  left: 21.97%;
+}
+
+@media (max-width: 1280px) {
+  .visual {
+    left: auto;
+    right: -120px;
+  }
+
+  .copy {
+    left: 40px;
+    width: min(536px, calc(100% - 640px));
+  }
+
+  .titles,
+  .title {
+    width: auto;
+  }
+
+  .title {
+    font-size: 46px;
+    line-height: 48px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .stage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    padding: 150px 24px 0;
+  }
+
+  .copy {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    max-width: 620px;
+  }
+
+  .eyebrow {
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  .title {
+    font-size: 42px;
+    line-height: 44px;
+  }
+
+  .visual {
+    position: relative;
+    top: auto;
+    right: auto;
+    left: auto;
+    flex-shrink: 0;
+    margin-top: 24px;
+    zoom: 0.85;
+  }
+}
+
+@media (max-width: 700px) {
+  .visual {
+    zoom: 0.6;
+  }
+}
+
+@media (max-width: 480px) {
+  .stage {
+    padding: 144px 16px 0;
+  }
+
+  .title {
+    font-size: 34px;
+    line-height: 37px;
+  }
+
+  .visual {
+    zoom: 0.46;
+  }
+}

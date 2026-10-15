@@ -132,6 +132,7 @@ export function NovedadesSection() {
 
         <div
           className={styles.viewport}
+          data-no-reveal
           role="region"
           aria-roledescription="carrusel"
           aria-label="Novedades"

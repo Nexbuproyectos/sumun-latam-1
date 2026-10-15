@@ -160,3 +160,23 @@
     height: 338px;
   }
 }
+
+/* Variante de la Masterclass: elemento 3D de 871 × 681 a 203px sobre el texto y el niño arriba de todo. */
+@media (min-width: 1101px) {
+  .alto .visual {
+    top: -121px;
+    height: 681px;
+  }
+
+  .alto .decor img {
+    top: -3.08%;
+    width: 120.9%;
+    height: 103.08%;
+  }
+
+  .alto .nino {
+    top: 0;
+    bottom: auto;
+    aspect-ratio: 855 / 580;
+  }
+}

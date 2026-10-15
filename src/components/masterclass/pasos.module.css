@@ -1,0 +1,255 @@
+/*
+ * Frame de Figma: 1440 × 601 con fondo #004656. En Figma el botón queda cortado por el borde
+ * inferior (y 448 + 51 dentro de un bloque que termina en 409): acá la sección crece para mostrarlo.
+ */
+.section {
+  position: relative;
+  overflow: hidden;
+  background: #004656;
+}
+
+.stage {
+  position: relative;
+  max-width: 1439px;
+  margin: 0 auto;
+  padding: 119px 80px 96px;
+}
+
+/* Vidrios 3D girados ±90°; la imagen ocupa el 201.4% del ancho (se ve la mitad izquierda). */
+.decor {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.decorInner {
+  position: relative;
+  flex: none;
+  overflow: hidden;
+}
+
+.decorInner img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 201.4%;
+  max-width: none;
+  height: 100%;
+}
+
+/* Izquierdo: 666.6 × 496.2 en (-235, 199). */
+.decorIzq {
+  top: 199px;
+  left: -235px;
+  width: 666.58px;
+  height: 496.22px;
+}
+
+.decorIzq .decorInner {
+  width: 496.22px;
+  height: 666.58px;
+  rotate: 90deg;
+}
+
+/* Derecho: 481 × 358 en (1090, -50). */
+.decorDer {
+  top: -50px;
+  left: 1090px;
+  width: 481px;
+  height: 358px;
+}
+
+.decorDer .decorInner {
+  width: 358px;
+  height: 481px;
+  rotate: -90deg;
+}
+
+/* Diagnóstico (1100:7825): el frame mide 601px y el botón termina 47px antes del borde. */
+@media (min-width: 1101px) {
+  .compact .stage {
+    padding-bottom: 47px;
+  }
+}
+
+.content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 49px;
+  align-items: center;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  width: 729px;
+  max-width: 100%;
+  color: #fefefe;
+  font-family: var(--font-figtree), sans-serif;
+  text-align: center;
+}
+
+.title {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 34px;
+  text-box: trim-both cap alphabetic;
+}
+
+.lead {
+  width: 665px;
+  max-width: 100%;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+  box-sizing: border-box;
+  min-height: 265px;
+  padding: 32px;
+  border-radius: 16px;
+  background: #fefefe;
+  filter: drop-shadow(0 4px 11.6px rgba(218, 245, 254, 0.68));
+  transition: translate 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.card:hover {
+  translate: 0 -4px;
+}
+
+.badge {
+  padding: 4px 10px;
+  border-radius: 99px;
+  background: #004656;
+  color: #fefefe;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.cardText {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cardTitle {
+  margin: 0;
+  color: #004656;
+  font-family: var(--font-figtree), sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.cardDesc {
+  margin: 0;
+  color: #475569;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50.85px;
+  padding: 12.93px 22.16px;
+  border-radius: 92.32px;
+  background: #0083af;
+  color: #fefefe;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+@media (max-width: 1280px) {
+  .stage {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+
+  .decorDer {
+    left: auto;
+    right: -130px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .stage {
+    padding: 88px 24px 80px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .card {
+    min-height: 220px;
+  }
+}
+
+@media (max-width: 600px) {
+  .stage {
+    padding: 72px 16px;
+  }
+
+  .title {
+    font-size: 26px;
+    line-height: 30px;
+  }
+
+  .lead {
+    font-size: 16px;
+  }
+
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .card {
+    min-height: 0;
+    padding: 24px;
+  }
+
+  /* En mobile el vidrio derecho taparía el título. */
+  .decorDer {
+    display: none;
+  }
+
+  .decorIzq {
+    top: auto;
+    bottom: -200px;
+    left: -380px;
+  }
+}

@@ -32,12 +32,6 @@
   padding: 0 42px;
 }
 
-/* Solo en Tutor IA. ponytail: medidas tomadas de la captura, confirmar con el nodo de Figma. */
-.solid .bar {
-  width: calc(100% - 60px);
-  max-width: 1357px;
-  padding: 12px 12px 12px 21px;
-  border-radius: 100px;
 /* Variante "píldora" (páginas con hero oscuro): 1403 × 86 en (18, 39). */
 .barPill {
   width: calc(100% - 36px);
@@ -366,9 +360,6 @@ button.panelLink {
     padding: 0 16px;
   }
 
-  .solid .bar {
-    width: calc(100% - 32px);
-    padding: 8px 8px 8px 16px;
   .barPill {
     width: calc(100% - 32px);
     padding: 12px 12px 12px 20px;

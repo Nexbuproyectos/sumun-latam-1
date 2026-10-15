@@ -1,0 +1,244 @@
+/* Hero de Figma: 1440 × 847, fondo #f2f5fc. */
+.section {
+  position: relative;
+  overflow: hidden;
+  background: #f2f5fc;
+}
+
+.fondo {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.fondoStage {
+  position: relative;
+  max-width: 1439px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.fondoStage img {
+  max-width: none;
+}
+
+/* Elemento 3D: caja de 1116.2 × 1106.9 en (-469, 255); dentro, 871.2 × 702 girado 42.78° al 4%. */
+.decor {
+  position: absolute;
+  top: 255px;
+  left: -469px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1116.21px;
+  height: 1106.94px;
+}
+
+.decorInner {
+  position: relative;
+  flex: none;
+  overflow: hidden;
+  width: 871.2px;
+  height: 702px;
+  opacity: 0.04;
+  transform: rotate(42.78deg);
+}
+
+.decorInner img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 120.87%;
+  height: 100%;
+}
+
+/* Círculo de paneles: 1890 × 1719 centrado 18px a la izquierda, desde y -386, girado 180°. */
+.circulo {
+  position: absolute;
+  overflow: hidden;
+  top: -386px;
+  left: calc(50% - 18px - 945px);
+  width: 1890px;
+  height: 1719px;
+  rotate: 180deg;
+}
+
+.circuloA,
+.circuloB {
+  position: absolute;
+}
+
+.circuloA {
+  top: -43.9%;
+  left: -43.98%;
+  width: 187.98%;
+  height: 187.98%;
+}
+
+.circuloB {
+  top: -46.34%;
+  left: 9.36%;
+  width: 127.63%;
+  height: 127.63%;
+}
+
+.fundido {
+  position: absolute;
+  inset: 0;
+  background-size: 100% 100%;
+}
+
+/* Contenido: 689px centrado desde y 255. */
+.content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 62px;
+  align-items: center;
+  width: 689px;
+  max-width: calc(100% - 48px);
+  margin: 0 auto;
+  padding: 255px 0 154px;
+}
+
+.logos {
+  display: flex;
+  gap: 21.57px;
+  align-items: center;
+  margin-bottom: -2px;
+}
+
+/* Divisor de 0.29px: se dibuja de 1px al 29% para verse igual que en Figma. */
+.divisor {
+  width: 1px;
+  height: 71px;
+  opacity: 0.29;
+}
+
+/* Logo Sumun: recorte de 109.3 × 34.8 sobre la imagen original. */
+.logoSumun {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  width: 109.28px;
+  height: 34.8px;
+}
+
+.logoSumun img {
+  position: absolute;
+  top: -0.18%;
+  left: -18.68%;
+  width: 246.84%;
+  max-width: none;
+  height: 269.77%;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 33px;
+  align-items: center;
+  min-height: 191px;
+  color: #003d4c;
+  text-align: center;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  gap: 19px;
+  width: 672px;
+  max-width: 100%;
+  margin: 0;
+  font-family: var(--font-figtree), sans-serif;
+  font-weight: 600;
+}
+
+.titleA,
+.titleB {
+  display: block;
+  text-box: trim-both cap alphabetic;
+}
+
+.titleA {
+  font-size: 47.57px;
+  line-height: 45.81px;
+}
+
+.titleB {
+  font-size: 54px;
+  line-height: 52px;
+}
+
+.lead {
+  margin: 0;
+  font-family: var(--font-manrope), sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+
+.primary,
+.secondary {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 16px 32px;
+  border-radius: 100px;
+  font-family: var(--font-manrope), sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+/* Alto de Figma: 54px (22px de texto + 16px arriba y abajo). */
+.primary {
+  min-height: 54px;
+  background: #f15a2e;
+  color: #fefefe;
+  filter: drop-shadow(0 8px 12px rgba(241, 90, 46, 0.2));
+}
+
+.secondary {
+  min-height: 54px;
+  border: 1px solid #004656;
+  background: #fefefe;
+  color: #004656;
+}
+
+@media (max-width: 1100px) {
+  .content {
+    padding: 170px 0 110px;
+  }
+}
+
+@media (max-width: 700px) {
+  .content {
+    gap: 40px;
+    padding: 140px 0 88px;
+  }
+
+  .titleA {
+    font-size: 30px;
+    line-height: 32px;
+  }
+
+  .titleB {
+    font-size: 36px;
+    line-height: 38px;
+  }
+
+  .lead {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}

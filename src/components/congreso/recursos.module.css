@@ -1,0 +1,270 @@
+/* Frame de Figma: 1439 × 1405 desde y 1844; contenido de 1200px en (120, 113). */
+.section {
+  position: relative;
+}
+
+.stage {
+  display: flex;
+  flex-direction: column;
+  gap: 63px;
+  width: min(1200px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 113px 0;
+}
+
+.header {
+  display: flex;
+  gap: 32px;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  width: 768px;
+  max-width: 100%;
+  color: #003d4c;
+}
+
+.title {
+  width: 565px;
+  max-width: 100%;
+  margin: 0;
+  font-family: var(--font-figtree), sans-serif;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 49px;
+  text-box: trim-both cap alphabetic;
+}
+
+.lead {
+  margin: 0;
+  font-family: var(--font-manrope), sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* Flechas: 2 botones de 48px en 127px, a 8px del borde derecho. */
+.arrows {
+  display: flex;
+  flex-shrink: 0;
+  justify-content: space-between;
+  width: 127px;
+  margin-right: 8px;
+}
+
+.arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  padding: 12px;
+  border: 1px solid #eee;
+  border-radius: 50px;
+  background: #f15a2e;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    opacity 0.2s ease,
+    translate 0.2s ease;
+}
+
+.arrow:hover:not(:disabled) {
+  background: #d9481f;
+  translate: 0 -2px;
+}
+
+.arrow:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.arrow:focus-visible {
+  outline: 3px solid #00b9ff;
+  outline-offset: 2px;
+}
+
+.arrowPrev {
+  rotate: -90deg;
+}
+
+.arrowNext {
+  rotate: 90deg;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 380px);
+  gap: 29px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  animation: pagina-in 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes pagina-in {
+  from {
+    opacity: 0;
+    translate: 0 12px;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.media {
+  overflow: hidden;
+  height: 313px;
+  border-radius: 20px;
+  background: linear-gradient(182.28deg, #c8e2f9 29.6%, #a2d2ee 96.34%, #69badd 136.52%, #6cbcdf 183.37%);
+}
+
+.media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: scale 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.card:hover .media img {
+  scale: 1.03;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 0 16px;
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-family: var(--font-manrope), sans-serif;
+  font-weight: 500;
+}
+
+.autor {
+  margin: 0;
+  color: #003d4c;
+  font-size: 16px;
+  line-height: 20px;
+  white-space: nowrap;
+  text-box: trim-both cap alphabetic;
+}
+
+/* Título de 51px de alto: 2 líneas como máximo. */
+.titulo {
+  display: -webkit-box;
+  overflow: hidden;
+  height: 51px;
+  margin: 0;
+  color: #004656;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 25px;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+}
+
+.descargar {
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
+  align-self: flex-start;
+  color: #0095cd;
+  font-family: var(--font-manrope), sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: normal;
+  transition: color 0.2s ease;
+}
+
+.descargar:hover {
+  color: #0083af;
+}
+
+.descargar:hover img {
+  translate: 0 2px;
+}
+
+.descargar img {
+  transition: translate 0.2s ease;
+}
+
+@media (max-width: 1260px) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .media {
+    height: auto;
+    aspect-ratio: 380 / 313;
+  }
+}
+
+@media (max-width: 1100px) {
+  .stage {
+    gap: 40px;
+    padding: 88px 0;
+  }
+
+  .title {
+    font-size: 36px;
+    line-height: 40px;
+  }
+
+  .lead {
+    font-size: 18px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .stage {
+    width: calc(100% - 32px);
+    padding: 72px 0;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .title {
+    font-size: 30px;
+    line-height: 34px;
+  }
+
+  .lead {
+    font-size: 17px;
+  }
+
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+
+  .body {
+    padding: 0 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .grid {
+    animation: none;
+  }
+}

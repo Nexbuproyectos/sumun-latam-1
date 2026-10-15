@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
 import styles from "./header.module.css";
@@ -23,33 +23,56 @@ const navItems: NavItem[] = [
   },
   {
     label: "Conversaciones Sumun",
-    href: "/#conversaciones",
+    href: "/conversaciones-sumun",
     items: [
+      { label: "Conversaciones Sumun", href: "/conversaciones-sumun", description: "Voces que inspiran nuevos caminos" },
       { label: "Serie documental", href: "/#serie", description: "La génesis de Sumun" },
-      { label: "Conversaciones", href: "/#conversaciones", description: "Voces que inspiran nuevos caminos" },
     ],
   },
   {
     label: "Nosotros",
-    href: "/#equipo",
+    href: "/identidad",
     items: [
+      { label: "Identidad", href: "/identidad", description: "Propósito y valores de Sumun" },
+      { label: "Impacto social", href: "/impacto-social", description: "Nuestro compromiso con la comunidad" },
       { label: "Nuestro equipo", href: "/#equipo", description: "Ellos lo hacen posible" },
-      { label: "Compromiso con la comunidad", href: "/#compromiso" },
       { label: "Nuestros aliados", href: "/#aliados" },
     ],
   },
   {
     label: "Recursos",
-    href: "/#tutor-ia",
+    href: "/tutor-ia",
     items: [
-      { label: "Tutor IA", href: "/#tutor-ia", description: "Aprendizaje personalizado 24/7" },
+      { label: "Tutor IA", href: "/tutor-ia", description: "Aprendizaje personalizado 24/7" },
+      { label: "Diagnóstico IA", href: "/diagnostico", description: "Madurez en IA de su institución" },
+      { label: "Masterclass", href: "/masterclass", description: "Cómo incorporar IA en educación" },
     ],
   },
   { label: "Noticias", href: "/#novedades" },
 ];
 
 // Páginas con hero oscuro: el header va en una píldora blanca (variante de Figma).
-const PILL_ROUTES = ["/vision-general", "/inteligencia-curricular", "/cultura-de-alto-desempeno", "/high-tech"];
+const PILL_ROUTES = [
+  "/vision-general",
+  "/inteligencia-curricular",
+  "/cultura-de-alto-desempeno",
+  "/high-tech",
+  // Vistas de la rama vistas-yohan que en Figma llevan el header como píldora blanca.
+  "/tutor-ia",
+  "/conversaciones-sumun",
+  "/impacto-social",
+  "/masterclass",
+  "/congreso",
+];
+
+// Todas las páginas del menú (sin anclas ni duplicados), para precargarlas.
+const PREFETCH_ROUTES = Array.from(
+  new Set(
+    navItems
+      .flatMap((item) => [item.href, ...(item.items ?? []).map((sub) => sub.href)])
+      .map((href) => href.split("#")[0] || "/"),
+  ),
+);
 
 function isActive(item: NavItem, pathname: string) {
   return item.items ? item.items.some((sub) => sub.href === pathname) : item.href === pathname;
@@ -57,12 +80,27 @@ function isActive(item: NavItem, pathname: string) {
 
 export function Header() {
   const [open, setOpen] = useState(false);
-  // Header como píldora blanca en las vistas que lo llevan así en Figma.
-  const solid = ["/tutor-ia", "/conversaciones-sumun", "/impacto-social"].includes(usePathname());
   const [menu, setMenu] = useState<string | null>(null);
   const [mobileSub, setMobileSub] = useState<string | null>(null);
   const closeTimer = useRef<number | undefined>(undefined);
   const pathname = usePathname();
+  const router = useRouter();
+
+  /*
+   * Precarga todas las páginas del menú cuando el navegador queda libre.
+   * Next solo precarga los <Link> visibles, y los del desplegable están ocultos: sin esto,
+   * la primera navegación esperaba la descarga y la View Transition se saltaba o arrancaba tarde.
+   */
+  useEffect(() => {
+    const prefetchAll = () => PREFETCH_ROUTES.forEach((href) => router.prefetch(href));
+    // Safari no tiene requestIdleCallback: ahí se usa un timeout.
+    if (typeof window.requestIdleCallback === "function") {
+      const id = window.requestIdleCallback(prefetchAll, { timeout: 2500 });
+      return () => window.cancelIdleCallback(id);
+    }
+    const timer = setTimeout(prefetchAll, 1200);
+    return () => clearTimeout(timer);
+  }, [router]);
   const pill = PILL_ROUTES.includes(pathname);
   const [scrolled, setScrolled] = useState(false);
 
@@ -114,8 +152,6 @@ export function Header() {
   };
 
   return (
-    <header className={solid ? `${styles.header} ${styles.solid}` : styles.header}>
-      <div className={styles.bar}>
     <header
       className={scrolled ? `${styles.header} ${styles.headerScrolled}` : styles.header}
       style={{ viewTransitionName: "site-header" }}
@@ -202,7 +238,7 @@ export function Header() {
           })}
         </nav>
 
-        <Link href="/#tutor-ia" className={`btn ${styles.demo}`}>
+        <Link href="/tutor-ia" className={`btn ${styles.demo}`}>
           Demo IA
           <img src="/images/header/ai.svg" alt="" width={24} height={24} />
         </Link>
@@ -269,7 +305,7 @@ export function Header() {
             );
           })}
         </nav>
-        <Link href="/#tutor-ia" className={`btn ${styles.panelDemo}`} onClick={() => setOpen(false)}>
+        <Link href="/tutor-ia" className={`btn ${styles.panelDemo}`} onClick={() => setOpen(false)}>
           Demo IA
           <img src="/images/header/ai.svg" alt="" width={24} height={24} />
         </Link>

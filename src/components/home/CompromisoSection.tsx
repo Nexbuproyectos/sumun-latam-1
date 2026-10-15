@@ -2,9 +2,17 @@ import Image from "next/image";
 
 import styles from "./compromiso.module.css";
 
-export function CompromisoSection() {
+type Props = {
+  buttonLabel?: string;
+  buttonHref?: string;
+  className?: string;
+  // En la Masterclass el niño va más arriba respecto del texto (1100:6455).
+  alto?: boolean;
+};
+
+export function CompromisoSection({ buttonLabel = "Conoce la marca", buttonHref = "#", className, alto = false }: Props) {
   return (
-    <section id="compromiso" className={styles.section} aria-labelledby="compromiso-title">
+    <section id="compromiso" className={[styles.section, alto ? styles.alto : "", className ?? ""].filter(Boolean).join(" ")} aria-labelledby="compromiso-title">
       <div className={styles.stage}>
         <div className={styles.visual} aria-hidden="true">
           <div className={styles.decor} data-parallax="slow">
@@ -32,8 +40,8 @@ export function CompromisoSection() {
             para reducir brechas, acortar distancias y empoderar a todos a
             alcanzar <strong>su mejor versión</strong>.
           </p>
-          <a href="#" className={styles.button}>
-            Conoce la marca
+          <a href={buttonHref} className={styles.button}>
+            {buttonLabel}
           </a>
         </div>
       </div>

@@ -1,0 +1,263 @@
+/* Frame de Figma: 1440 × 1124 desde y 785 (18px bajo el hero); la sección de pasos lo pisa en y 1895. */
+.section {
+  position: relative;
+  padding-top: 18px;
+}
+
+.stage {
+  position: relative;
+  max-width: 1439px;
+  height: 1092px;
+  margin: 0 auto;
+}
+
+/* Vidrio turquesa: 712 × 698 en (27, 205), girado 180° y recortado. */
+.ola {
+  position: absolute;
+  top: 205px;
+  left: 27px;
+  overflow: hidden;
+  width: 712px;
+  height: 698px;
+  pointer-events: none;
+  rotate: 180deg;
+}
+
+.ola img {
+  position: absolute;
+  top: -30.49%;
+  left: -27.39%;
+  width: 152.36%;
+  max-width: none;
+  height: 155.41%;
+}
+
+/* Portada del video: 533 × 894 en (139, 104). */
+.video {
+  position: absolute;
+  top: 104px;
+  left: 139px;
+  overflow: hidden;
+  width: 533px;
+  height: 894px;
+  border-radius: 12px;
+}
+
+.video > img:first-child {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.play {
+  position: absolute;
+  top: calc(50% + 36px);
+  left: calc(50% - 0.29px);
+  transform: translate(-50%, -50%);
+}
+
+.copy {
+  position: absolute;
+  top: 169px;
+  left: 781px;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  align-items: flex-start;
+  width: 519px;
+  color: #004656;
+  font-family: var(--font-figtree), sans-serif;
+}
+
+.eyebrow {
+  margin: 0;
+  color: #f15a2e;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 30px;
+}
+
+.title {
+  margin: 0;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 49px;
+}
+
+.text {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.text p {
+  margin: 0;
+}
+
+.text strong {
+  font-weight: 700;
+}
+
+.buttons {
+  display: flex;
+  gap: 16px;
+}
+
+.primary,
+.secondary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  height: 50.85px;
+  padding: 12.93px 22.16px;
+  border-radius: 92.32px;
+  white-space: nowrap;
+}
+
+.primary {
+  background: #0083af;
+  color: #fefefe;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.secondary {
+  border: 1px solid #89d5f1;
+  background: #fff;
+  color: #0095cd;
+  font-family: var(--font-manrope), sans-serif;
+  font-size: 16.62px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.descarga {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 14px 18px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  color: #004656;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: normal;
+  transition: background-color 0.2s ease;
+}
+
+.descarga span {
+  text-decoration: underline;
+  text-decoration-thickness: from-font;
+  text-underline-position: from-font;
+}
+
+.descarga:hover {
+  background: rgba(0, 131, 175, 0.08);
+}
+
+@media (max-width: 1280px) {
+  .video {
+    left: 60px;
+  }
+
+  .ola {
+    left: -52px;
+  }
+
+  .copy {
+    left: auto;
+    right: 40px;
+    width: calc(100% - 713px);
+  }
+
+  .title {
+    font-size: 42px;
+    line-height: 44px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .section {
+    padding-top: 0;
+  }
+
+  .buttons {
+    flex-wrap: wrap;
+  }
+
+  .stage {
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+    align-items: center;
+    height: auto;
+    padding: 72px 24px 96px;
+  }
+
+  .video {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: min(420px, 100%);
+    height: auto;
+    aspect-ratio: 533 / 894;
+  }
+
+  .ola {
+    top: 40px;
+    left: 50%;
+    width: 560px;
+    height: 549px;
+    /* Sin `translate`: lo usa el parallax. */
+    margin-left: -364px;
+  }
+
+  .copy {
+    position: relative;
+    top: auto;
+    right: auto;
+    left: auto;
+    width: 100%;
+    max-width: 620px;
+    gap: 28px;
+  }
+
+  .eyebrow {
+    font-size: 24px;
+    line-height: 26px;
+  }
+
+  .title {
+    font-size: 34px;
+    line-height: 38px;
+  }
+
+  .text {
+    font-size: 17px;
+    line-height: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stage {
+    padding: 56px 16px 80px;
+  }
+
+  .buttons,
+  .primary,
+  .secondary {
+    width: 100%;
+  }
+
+  .secondary {
+    font-size: 15px;
+  }
+
+  .descarga {
+    padding-left: 0;
+  }
+}

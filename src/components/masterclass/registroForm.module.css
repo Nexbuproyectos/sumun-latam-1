@@ -1,0 +1,247 @@
+/* Tarjeta "quote" de Figma: 413 × 553, padding 24, fondo turquesa. */
+.card {
+  box-sizing: border-box;
+  width: 413px;
+  padding: 24px;
+  border-radius: 8px;
+  background: #0083af;
+  color: #fff;
+  box-shadow: 0 30px 60px -30px rgba(0, 61, 76, 0.45);
+}
+
+.form,
+.exito {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.titulo {
+  margin: 0;
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: 27.4px;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.bajada {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: var(--font-geist), sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.campos {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.campo label {
+  color: rgba(255, 255, 255, 0.8);
+  font-family: var(--font-geist), sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.campo input,
+.campo select {
+  box-sizing: border-box;
+  width: 100%;
+  height: 46px;
+  margin: 0;
+  padding: 14px 16px;
+  border: 1px solid #fff;
+  border-radius: 8px;
+  background: transparent;
+  color: #fff;
+  font-family: var(--font-geist), sans-serif;
+  font-size: 14px;
+  line-height: normal;
+  outline: none;
+  backdrop-filter: blur(8px);
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.campo input::placeholder {
+  color: #fff;
+  opacity: 1;
+}
+
+.campo input:focus-visible,
+.campo select:focus-visible {
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.35);
+}
+
+.campo [aria-invalid="true"] {
+  border-color: #ffd2b8;
+  box-shadow: 0 0 0 1px #ffd2b8;
+}
+
+.select {
+  position: relative;
+}
+
+.campo select {
+  padding-right: 44px;
+  cursor: pointer;
+  appearance: none;
+}
+
+/* Las opciones del desplegable nativo van sobre fondo claro. */
+.campo select option {
+  color: #003d4c;
+}
+
+/* Flecha de 9.5 × 19 girada 90°: queda en 19 × 9.5, a 16px del borde. */
+.flecha {
+  position: absolute;
+  top: 50%;
+  right: 20.75px;
+  pointer-events: none;
+  transform: translateY(-50%) rotate(90deg);
+}
+
+.error {
+  margin: 0;
+  color: #ffe1cf;
+  font-family: var(--font-geist), sans-serif;
+  font-size: 12px;
+  line-height: 1.3;
+}
+
+.fecha {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+  border: 1px solid #d9e7f0;
+  border-radius: 12px;
+  background: #fff;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.05));
+}
+
+.fechaTitulo {
+  margin: 0;
+  color: #0083af;
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: normal;
+}
+
+/* El ícono va en una caja de 18px (margen de 2px) con 10px de separación. */
+.fechaDetalle {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin: 0;
+  color: #004656;
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.fechaDetalle img {
+  flex-shrink: 0;
+  margin-left: 2px;
+}
+
+.boton {
+  width: 100%;
+  padding: 14px 24px;
+  border: 0;
+  border-radius: 48.92px;
+  background: #ff6f00;
+  color: #fff;
+  font-family: var(--font-geist), sans-serif;
+  font-size: 14.57px;
+  font-weight: 600;
+  line-height: normal;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    translate 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.boton:hover {
+  background: #f15a2e;
+  translate: 0 -2px;
+  box-shadow: 0 12px 24px -12px rgba(255, 111, 0, 0.8);
+}
+
+.boton:active {
+  translate: 0 0;
+}
+
+.boton:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
+
+.exito {
+  min-height: 505px;
+  justify-content: center;
+  animation: exito-in 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.exitoIcono {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #fff;
+  color: #0083af;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+@keyframes exito-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .titulo {
+    font-size: 24px;
+  }
+
+  .exito {
+    min-height: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .exito {
+    animation: none;
+  }
+}

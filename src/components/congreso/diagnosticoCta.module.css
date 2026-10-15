@@ -1,0 +1,284 @@
+/* Franja oscura de Figma: 997px de alto desde y 847. */
+.section {
+  position: relative;
+  overflow: hidden;
+  background: #004656;
+}
+
+/* Contenido: 1326px desde (113, 103), texto y tablet centrados en vertical. */
+.stage {
+  position: relative;
+  display: flex;
+  gap: 35px;
+  align-items: center;
+  box-sizing: border-box;
+  max-width: 1439px;
+  height: 997px;
+  margin: 0 auto;
+  padding: 103px 0 103px 113px;
+}
+
+.copy {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  gap: 58px;
+  width: 514px;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.eyebrow {
+  margin: 0;
+  color: #c8e2f9;
+  font-family: var(--font-figtree), sans-serif;
+  font-size: 31.87px;
+  font-weight: 600;
+  line-height: 37.18px;
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  gap: 71px;
+  justify-content: center;
+  min-height: 385px;
+  color: #fefefe;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  gap: 42px;
+}
+
+.title {
+  width: 501px;
+  max-width: 100%;
+  margin: 0;
+  font-family: var(--font-figtree), sans-serif;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 49px;
+  text-box: trim-both cap alphabetic;
+}
+
+.question {
+  width: 496px;
+  max-width: 100%;
+  margin: 0;
+  font-family: var(--font-manrope), sans-serif;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 33px;
+  text-box: trim-both cap alphabetic;
+}
+
+.body {
+  width: 463px;
+  max-width: 100%;
+  margin: 0;
+  font-family: var(--font-manrope), sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 25px;
+  text-box: trim-both cap alphabetic;
+}
+
+.body strong {
+  font-weight: 700;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.primary,
+.secondary {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  min-height: 54px;
+  padding: 16px 32px;
+  border-radius: 100px;
+  font-family: var(--font-manrope), sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.primary {
+  background: #f15a2e;
+  color: #fefefe;
+  filter: drop-shadow(0 8px 12px rgba(241, 90, 46, 0.2));
+}
+
+.secondary {
+  border: 1px solid #004656;
+  background: #fefefe;
+  color: #004656;
+}
+
+.bullets {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bullets li {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  color: #fefefe;
+  font-family: var(--font-manrope), sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.bullets img {
+  flex-shrink: 0;
+}
+
+/* Tablet: 777 × 791 recortada; la imagen mide 151.22% × 98.78% y arranca 2.45% más abajo. */
+.visual {
+  position: relative;
+  flex-shrink: 0;
+  overflow: hidden;
+  width: 777px;
+  height: 791px;
+}
+
+.visual img {
+  position: absolute;
+  top: 2.45%;
+  left: -0.06%;
+  width: 151.22%;
+  max-width: none;
+  height: 98.78%;
+}
+
+/* Rectangle 3206: 1173 × 256 en (710, 1588) → 741px dentro de la franja. */
+.fundido {
+  position: absolute;
+  top: 741px;
+  left: 710px;
+  z-index: 1;
+  width: 1173px;
+  height: 256px;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 70, 86, 0) 8.33%,
+    rgba(0, 70, 86, 0.685) 35.98%,
+    #004656 52.69%,
+    #004656 81.5%
+  );
+  backdrop-filter: blur(25.85px);
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 30%);
+  mask-image: linear-gradient(180deg, transparent 0%, #000 30%);
+}
+
+@media (max-width: 1300px) {
+  .stage {
+    padding-left: 48px;
+  }
+
+  .visual {
+    width: 640px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .stage {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 24px;
+    height: auto;
+    padding: 88px 24px 0;
+  }
+
+  .copy {
+    width: 100%;
+    max-width: 620px;
+    gap: 40px;
+  }
+
+  .block {
+    gap: 32px;
+    min-height: 0;
+  }
+
+  .heading {
+    gap: 24px;
+  }
+
+  .title {
+    font-size: 38px;
+    line-height: 42px;
+  }
+
+  .question {
+    font-size: 21px;
+    line-height: 28px;
+  }
+
+  .body {
+    font-size: 17px;
+  }
+
+  .visual {
+    align-self: flex-end;
+    width: min(777px, 100%);
+    height: auto;
+    aspect-ratio: 777 / 791;
+    margin-right: -24px;
+  }
+
+  .fundido {
+    top: auto;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stage {
+    padding: 72px 16px 0;
+  }
+
+  .title {
+    font-size: 32px;
+    line-height: 36px;
+  }
+
+  .primary,
+  .secondary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .visual {
+    margin-right: -16px;
+  }
+}

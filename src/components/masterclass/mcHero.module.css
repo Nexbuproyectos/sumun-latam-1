@@ -1,0 +1,251 @@
+/* Hero de Figma: 1440 × 767, fondo #f2f5fc. */
+.section {
+  position: relative;
+  z-index: 1;
+  background: #f2f5fc;
+}
+
+.clip {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.decorStage {
+  position: relative;
+  max-width: 1439px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+/* Elemento 3D: caja de 991.2 × 983 en (-273, 293); dentro, 773.6 × 623.4 girado 42.78° al 4%. */
+.decor {
+  position: absolute;
+  top: 293.04px;
+  left: -273px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 991.19px;
+  height: 982.96px;
+}
+
+.decorInner {
+  position: relative;
+  flex: none;
+  overflow: hidden;
+  width: 773.6px;
+  height: 623.4px;
+  opacity: 0.04;
+  transform: rotate(42.78deg);
+}
+
+.decorInner img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 120.87%;
+  max-width: none;
+  height: 100%;
+}
+
+.stage {
+  position: relative;
+  max-width: 1439px;
+  height: 767px;
+  margin: 0 auto;
+}
+
+/* Círculo de paneles: 914 × 914 en (564, 2); baja 149px por debajo del hero. */
+.circulo {
+  position: absolute;
+  top: 2px;
+  left: 564px;
+  width: 914px;
+  height: 914px;
+  pointer-events: none;
+}
+
+.circulo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.copy {
+  position: absolute;
+  top: 224px;
+  left: 80px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  align-items: flex-start;
+  width: 557px;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 33px;
+}
+
+.titles {
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+  width: 511px;
+  font-family: var(--font-figtree), sans-serif;
+  font-weight: 600;
+}
+
+.eyebrow {
+  margin: 0;
+  color: #ff6f00;
+  font-size: 30px;
+  line-height: 32px;
+  text-box: trim-both cap alphabetic;
+}
+
+.title {
+  width: 499px;
+  margin: 0;
+  color: #003d4c;
+  font-size: 54px;
+  font-weight: 600;
+  line-height: 52px;
+  text-box: trim-both cap alphabetic;
+}
+
+.lead {
+  width: 543px;
+  margin: 0;
+  color: #003f52;
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.24;
+  text-box: trim-both cap alphabetic;
+}
+
+.lead strong {
+  font-weight: 700;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50.85px;
+  padding: 12.93px 22.16px;
+  border-radius: 92.32px;
+  background: #0083af;
+  color: #fefefe;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+/* Formulario: 413 × 553 en (814, 182). */
+.form {
+  position: absolute;
+  top: 182px;
+  left: 814px;
+  z-index: 2;
+}
+
+@media (max-width: 1280px) {
+  .circulo {
+    left: auto;
+    right: -180px;
+  }
+
+  .form {
+    left: auto;
+    right: 40px;
+  }
+
+  .copy {
+    left: 40px;
+    width: min(557px, calc(100% - 520px));
+  }
+
+  .titles,
+  .title,
+  .lead {
+    width: auto;
+  }
+}
+
+@media (max-width: 1100px) {
+  .stage {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    align-items: center;
+    height: auto;
+    padding: 150px 24px 72px;
+  }
+
+  .copy {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    max-width: 620px;
+  }
+
+  .eyebrow {
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  .title {
+    font-size: 42px;
+    line-height: 44px;
+  }
+
+  .lead {
+    font-size: 17px;
+  }
+
+  .circulo {
+    top: auto;
+    right: auto;
+    bottom: -40px;
+    left: 50%;
+    width: 760px;
+    height: 760px;
+    transform: translateX(-50%);
+  }
+
+  .form {
+    position: relative;
+    top: auto;
+    right: auto;
+    left: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .stage {
+    padding: 144px 16px 56px;
+  }
+
+  .title {
+    font-size: 36px;
+    line-height: 38px;
+  }
+
+  .form {
+    width: 100%;
+  }
+
+  .circulo {
+    width: 560px;
+    height: 560px;
+  }
+}

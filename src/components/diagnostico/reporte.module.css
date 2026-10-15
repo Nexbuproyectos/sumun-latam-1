@@ -1,0 +1,520 @@
+/* Frame de Figma: 1440 × 1146 con fondo #f2f5fc. El contenido (1275px) va centrado desde y 74. */
+.section {
+  position: relative;
+  background: #f2f5fc;
+}
+
+.stage {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  box-sizing: border-box;
+  max-width: 1439px;
+  height: 1146px;
+  margin: 0 auto;
+  padding-top: 74px;
+}
+
+/* Columna izquierda: 514px, 46px más abajo que el mockup; el mockup la pisa 29px. */
+.copy {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 105px;
+  align-items: flex-start;
+  width: 514px;
+  margin: 46px -29px 0 0;
+  flex-shrink: 0;
+}
+
+.title {
+  margin: 0;
+  color: #003d4c;
+  font-family: var(--font-figtree), sans-serif;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 52px;
+  text-box: trim-both cap alphabetic;
+}
+
+.funciones {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.funcion {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #696969;
+  font-family: var(--font-manrope), sans-serif;
+  text-align: left;
+  cursor: pointer;
+}
+
+.funcion:focus-visible {
+  outline: 3px solid #00b9ff;
+  outline-offset: 6px;
+  border-radius: 8px;
+}
+
+/* La flecha (61px + 15px de separación) solo ocupa lugar en la función activa. */
+.flecha {
+  display: flex;
+  flex-shrink: 0;
+  overflow: hidden;
+  width: 0;
+  margin-right: 0;
+  opacity: 0;
+  transition:
+    width 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    margin 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.3s ease;
+}
+
+.flecha img {
+  flex-shrink: 0;
+  rotate: 180deg;
+}
+
+.funcionActiva .flecha {
+  width: 61px;
+  margin-right: 15px;
+  opacity: 1;
+}
+
+.funcionText {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.funcionTitle {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.4;
+  transition: color 0.3s ease;
+}
+
+.funcionDesc {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.5;
+  transition: color 0.3s ease;
+}
+
+.funcionActiva .funcionTitle {
+  color: #0095cd;
+  font-weight: 800;
+}
+
+.funcionActiva .funcionDesc {
+  color: #0083af;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50.85px;
+  padding: 12.93px 22.16px;
+  border-radius: 92.32px;
+  background: #0083af;
+  box-shadow: 0 0 16px rgba(0, 185, 255, 0.25);
+  color: #fff;
+  font-family: var(--font-manrope), sans-serif;
+  font-size: 16.62px;
+  font-weight: 700;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+/* ---------- Mockup ---------- */
+.mockup {
+  position: relative;
+  flex-shrink: 0;
+  overflow: hidden;
+  width: 790px;
+  height: 847px;
+}
+
+.mockup img {
+  max-width: none;
+}
+
+/* Brillo blanco desenfocado: círculo de 502px en (124, 236); el SVG suma el blur alrededor. */
+.brillo {
+  position: absolute;
+  top: -59.3px;
+  left: -171.3px;
+  width: 1092.6px;
+  height: 1092.6px;
+  pointer-events: none;
+}
+
+/* iPads: 1047 × 777 girados -5.41°, centrados en su caja de 1115.6 × 872.4 en (-278.6, 91). */
+.ipads {
+  position: absolute;
+  top: 138.62px;
+  left: -244.31px;
+  overflow: hidden;
+  width: 1047px;
+  height: 777.07px;
+  pointer-events: none;
+  rotate: -5.41deg;
+}
+
+.ipads img {
+  position: absolute;
+  top: -0.97%;
+  left: 0;
+  width: 100%;
+  height: 101.05%;
+}
+
+.fundido {
+  position: absolute;
+  top: 508px;
+  left: -2px;
+  width: 773px;
+  height: 339px;
+  pointer-events: none;
+  background: linear-gradient(
+    179.45deg,
+    rgba(242, 245, 252, 0) 1.05%,
+    rgba(242, 245, 252, 0.892) 62.73%,
+    #f2f5fc 95.23%
+  );
+}
+
+/* Tarjeta "compartir": 342px en (385, 321). */
+.tarjeta {
+  position: absolute;
+  top: 321px;
+  left: 385px;
+  display: flex;
+  flex-direction: column;
+  gap: 18.665px;
+  align-items: center;
+  box-sizing: border-box;
+  width: 342px;
+  padding: 24.085px;
+  border: 0.602px solid #e2e8f0;
+  border-radius: 12.042px;
+  background: #fefefe;
+  filter: drop-shadow(1.49px 8.938px 7.672px rgba(208, 211, 243, 0.54))
+    drop-shadow(0 4.817px 7.225px rgba(15, 23, 42, 0.06));
+}
+
+.tarjetaHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 6.021px;
+  width: 100%;
+  font-family: var(--font-figtree), sans-serif;
+}
+
+.tarjetaTitle {
+  height: 22.88px;
+  margin: 0;
+  color: #004656;
+  font-size: 12.042px;
+  font-weight: 800;
+  line-height: 26.493px;
+}
+
+.tarjetaDesc {
+  margin: 0;
+  color: #475569;
+  font-size: 10.838px;
+  font-weight: 500;
+  line-height: 15.655px;
+}
+
+.invitados {
+  display: flex;
+  flex-direction: column;
+  gap: 10.838px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.invitado {
+  position: relative;
+  box-sizing: border-box;
+  width: 304.669px;
+  height: 59.007px;
+  overflow: hidden;
+  border: 0.602px solid #e2e8f0;
+  border-radius: 9.634px;
+  background: #f8fafc;
+}
+
+/* Fotos espejadas, con la caja y el recorte de cada una en Figma. */
+.invFoto {
+  position: absolute;
+  overflow: hidden;
+  transform: scaleX(-1);
+}
+
+.invFoto img {
+  position: absolute;
+}
+
+.invInfo {
+  position: absolute;
+  left: 88.98px;
+  display: flex;
+  flex-direction: column;
+  gap: 3.011px;
+  width: 205.32px;
+  font-family: var(--font-figtree), sans-serif;
+  color: #004656;
+}
+
+.invRol {
+  font-size: 10.838px;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.enlace {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 4.817px;
+  border: 0.602px solid #e2e8f0;
+  border-radius: 7.225px;
+  background: #fefefe;
+}
+
+.enlaceUrl {
+  width: 112.595px;
+  font-size: 8.43px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.copiar {
+  display: flex;
+  gap: 3.811px;
+  align-items: center;
+  justify-content: center;
+  width: 60.981px;
+  height: 20.962px;
+  padding: 0;
+  border: 0;
+  border-radius: 5.717px;
+  background: #006678;
+  color: #fefefe;
+  font-family: var(--font-figtree), sans-serif;
+  font-size: 5.717px;
+  font-weight: 700;
+  line-height: normal;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.copiar:hover {
+  background: #0083af;
+}
+
+.copiar:focus-visible {
+  outline: 2px solid #00b9ff;
+  outline-offset: 1px;
+}
+
+.invDirectivos,
+.invAdministrativo {
+  height: 58.405px;
+}
+
+.invDirectivos .invFoto {
+  top: -6.02px;
+  left: -0.7px;
+  width: 78.375px;
+  height: 109.444px;
+}
+
+.invDirectivos .invFoto img {
+  top: -3.38%;
+  left: -15.92%;
+  width: 131.84%;
+  height: 100%;
+}
+
+.invDirectivos .invInfo {
+  top: 12.24px;
+}
+
+.invDocentes .invFoto {
+  top: -2.11px;
+  left: 1.79px;
+  width: 75.878px;
+  height: 105.956px;
+}
+
+.invDocentes .invFoto img {
+  top: -4.44%;
+  left: -68.33%;
+  width: 243.74%;
+  height: 109.99%;
+}
+
+.invDocentes .invInfo {
+  top: 8.93px;
+}
+
+.invEstudiante .invFoto {
+  top: 0.6px;
+  left: 1.88px;
+  width: 76.394px;
+  height: 106.677px;
+}
+
+.invEstudiante .invFoto img {
+  top: -0.01%;
+  left: 0.79%;
+  width: 98.41%;
+  height: 87.66%;
+}
+
+.invEstudiante .invInfo {
+  top: 12.24px;
+}
+
+.invFamilia .invFoto {
+  top: -0.75px;
+  left: 1.96px;
+  width: 76.911px;
+  height: 107.399px;
+}
+
+.invFamilia .invFoto img {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.invFamilia .invInfo {
+  top: 10.59px;
+}
+
+.invAdministrativo .invFoto {
+  top: -5.27px;
+  left: -0.7px;
+  width: 78.375px;
+  height: 109.444px;
+}
+
+.invAdministrativo .invFoto img {
+  top: -0.02%;
+  left: -58.84%;
+  width: 213.67%;
+  height: 102.01%;
+}
+
+.invAdministrativo .invInfo {
+  top: 7.28px;
+}
+
+@media (max-width: 1300px) {
+  .copy {
+    width: 460px;
+  }
+
+  .title {
+    font-size: 42px;
+    line-height: 46px;
+  }
+
+  .mockup {
+    margin-right: -120px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .stage {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    padding: 88px 24px 40px;
+  }
+
+  .copy {
+    width: 100%;
+    max-width: 620px;
+    gap: 48px;
+    margin: 0;
+  }
+
+  .title {
+    font-size: 36px;
+    line-height: 40px;
+  }
+
+  .funciones {
+    gap: 28px;
+  }
+
+  .mockup {
+    margin: 24px 0 0;
+    zoom: 0.85;
+  }
+}
+
+@media (max-width: 700px) {
+  .mockup {
+    zoom: 0.62;
+  }
+}
+
+@media (max-width: 480px) {
+  .stage {
+    padding: 72px 16px 24px;
+  }
+
+  .title {
+    font-size: 30px;
+    line-height: 34px;
+  }
+
+  .funcionTitle {
+    font-size: 20px;
+  }
+
+  .funcionDesc {
+    font-size: 17px;
+  }
+
+  .funcionActiva .flecha {
+    width: 40px;
+    margin-right: 10px;
+  }
+
+  .flecha img {
+    width: 40px;
+    height: 40px;
+  }
+
+  /* Se corre a la izquierda para que la tarjeta entre completa: se ve la mitad derecha de los iPads. */
+  .mockup {
+    align-self: flex-start;
+    margin-left: -150px;
+    zoom: 0.58;
+  }
+}

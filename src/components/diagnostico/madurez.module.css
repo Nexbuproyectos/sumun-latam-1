@@ -1,0 +1,379 @@
+/* Frame de Figma: 1440 × 1169 con fondo #004656 (los primeros ~207px los pisa la onda). */
+.section {
+  position: relative;
+  z-index: 1;
+  background: #004656;
+}
+
+.stage {
+  position: relative;
+  max-width: 1439px;
+  height: 1169px;
+  margin: 0 auto;
+}
+
+.header {
+  position: absolute;
+  top: 210px;
+  left: calc(50% + 0.5px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  width: 729px;
+  color: #fefefe;
+  font-family: var(--font-figtree), sans-serif;
+  text-align: center;
+  translate: -50% 0;
+}
+
+.title {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 34px;
+  text-box: trim-both cap alphabetic;
+}
+
+.lead {
+  width: 665px;
+  max-width: 100%;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+/* Matriz con ejes: de (157, 336) a (1225, 938). */
+.matriz {
+  position: absolute;
+  top: 336px;
+  left: 157px;
+  width: 1068px;
+  height: 602px;
+}
+
+.ejes img {
+  position: absolute;
+  max-width: none;
+}
+
+.masArriba {
+  top: 0;
+  left: 0;
+}
+
+/* Eje vertical: línea de 464px en x 180 (el SVG suma 3.68px de cada lado por las puntas). */
+.ejeVertical {
+  top: 54.5px;
+  left: 19.32px;
+}
+
+.menos {
+  top: 539px;
+  left: 0;
+}
+
+/* Eje horizontal: el SVG vertical de 948px girado 90°, centrado en (698.5, 897). */
+.ejeHorizontal {
+  top: 87px;
+  left: 537.82px;
+  rotate: 90deg;
+}
+
+.masDerecha {
+  top: 538px;
+  left: 1022px;
+}
+
+.labelVertical,
+.labelHorizontal {
+  position: absolute;
+  margin: 0;
+  color: #fefefe;
+  font-family: var(--font-figtree), sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: normal;
+  text-align: center;
+}
+
+/* Texto girado -90°: 507 × 24 con centro en (149, 601.5) de la sección, o sea (-8, 265.5) de la matriz. */
+.labelVertical {
+  top: 253.5px;
+  left: -261.5px;
+  width: 507px;
+  height: 24px;
+  rotate: -90deg;
+}
+
+.labelHorizontal {
+  top: 578px;
+  left: 68px;
+  width: 947px;
+}
+
+/* Grilla 2 × 2 de 990 × 513 en (225, 336), separación 14. */
+.grid {
+  position: absolute;
+  top: 0;
+  left: 68px;
+  display: grid;
+  grid-template-columns: repeat(2, 488px);
+  grid-template-rows: repeat(2, 249.5px);
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #fff;
+  transition:
+    translate 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s ease;
+}
+
+.card:hover {
+  translate: 0 -4px;
+  box-shadow: 0 18px 40px -20px rgba(0, 0, 0, 0.55);
+}
+
+.cardText {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-left: 42px;
+  color: #004656;
+  font-family: var(--font-manrope), sans-serif;
+}
+
+.cardTitle {
+  margin: 0;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 33px;
+  white-space: nowrap;
+  text-box: trim-both cap alphabetic;
+}
+
+.cardDesc {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 26px;
+  text-box: trim-both cap alphabetic;
+}
+
+/* Ilustraciones pegadas al borde derecho, estiradas a su caja como en Figma. */
+.cardImg {
+  position: absolute;
+  right: 0;
+  transition: scale 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  transform-origin: bottom right;
+}
+
+.card:hover .cardImg {
+  scale: 1.04;
+}
+
+.integrador .cardDesc {
+  width: 233px;
+}
+
+.integrador .cardImg {
+  top: 0;
+  width: 213px;
+  height: 250px;
+}
+
+.transformador .cardDesc {
+  width: 293px;
+}
+
+/* En Figma estos dos textos no están centrados: bajan 15px y 6px. */
+.transformador .cardText {
+  padding-top: 30px;
+}
+
+.desarrollo .cardText {
+  padding-top: 12px;
+}
+
+.transformador .cardImg {
+  top: 0;
+  width: 211px;
+  height: 250px;
+}
+
+.inicial .cardDesc {
+  width: 293px;
+}
+
+.inicial .cardImg {
+  top: 0.5px;
+  width: 209px;
+  height: 249px;
+}
+
+.desarrollo .cardDesc {
+  width: 282px;
+}
+
+.desarrollo .cardImg {
+  top: 0.5px;
+  width: 192px;
+  height: 249px;
+}
+
+.button {
+  position: absolute;
+  top: 974px;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  height: 51px;
+  padding: 12.93px 22.16px;
+  border-radius: 92.32px;
+  background: #f15a2e;
+  color: #fefefe;
+  font-family: var(--font-manrope), sans-serif;
+  font-size: 16.62px;
+  font-weight: 700;
+  line-height: 1.5;
+  white-space: nowrap;
+  translate: -50% 0;
+}
+
+.button:hover {
+  translate: -50% -2px;
+}
+
+@media (max-width: 1100px) {
+  .stage {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    height: auto;
+    padding: 200px 24px 88px;
+  }
+
+  .header,
+  .button {
+    position: relative;
+    top: auto;
+    left: auto;
+    translate: none;
+  }
+
+  .header {
+    width: 100%;
+    max-width: 729px;
+  }
+
+  .button {
+    height: auto;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .button:hover {
+    translate: 0 -2px;
+  }
+
+  /* La matriz mantiene su composición y se escala. */
+  .matriz {
+    position: relative;
+    top: auto;
+    left: auto;
+    flex-shrink: 0;
+    zoom: 0.82;
+  }
+}
+
+@media (max-width: 900px) {
+  .matriz {
+    zoom: 0.66;
+  }
+}
+
+@media (max-width: 720px) {
+  .transformador .cardText,
+  .desarrollo .cardText {
+    padding-top: 24px;
+  }
+
+  .stage {
+    padding-top: 150px;
+  }
+
+  .title {
+    font-size: 26px;
+    line-height: 30px;
+  }
+
+  .lead {
+    font-size: 16px;
+  }
+
+  /* En mobile: sin ejes, una tarjeta por fila. */
+  .matriz {
+    width: 100%;
+    height: auto;
+    zoom: 1;
+  }
+
+  .ejes,
+  .labelVertical,
+  .labelHorizontal {
+    display: none;
+  }
+
+  .grid {
+    position: relative;
+    left: auto;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: none;
+    gap: 12px;
+  }
+
+  .card {
+    min-height: 200px;
+  }
+
+  .cardText {
+    gap: 14px;
+    padding: 24px 0 24px 24px;
+    max-width: 58%;
+  }
+
+  .cardTitle {
+    font-size: 21px;
+  }
+
+  .cardDesc {
+    width: auto !important;
+    font-size: 17px;
+    line-height: 22px;
+  }
+
+  .cardImg {
+    height: 100% !important;
+    width: 42% !important;
+    top: 0 !important;
+  }
+
+  .button {
+    font-size: 15px;
+  }
+}

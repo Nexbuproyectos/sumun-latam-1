@@ -1,0 +1,11 @@
+/* En la Masterclass el bloque va sobre el fondo de la página y con aire sobre la sección de pasos. */
+.compromiso {
+  padding-top: 171px;
+  background: transparent;
+}
+
+@media (max-width: 1100px) {
+  .compromiso {
+    padding-top: 0;
+  }
+}

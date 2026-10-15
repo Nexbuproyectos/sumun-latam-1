@@ -1,77 +1,136 @@
 /*
- * Precarga las imágenes principales y las fuentes de una página cuando el usuario muestra intención
- * de ir (pasa el mouse por el link, lo enfoca o abre un menú).
+ * Precarga lo que se ve primero de una página (imágenes del hero y fuentes) antes de navegar a ella.
  *
- * Por qué: al navegar, React espera a las imágenes visibles de la página nueva (hasta ~0.8 s) antes
- * de mostrarla. Next precarga el contenido de la ruta pero no sus imágenes, así que la primera vez
- * la pantalla quedaba congelada. Si las imágenes ya están en caché al hacer click, la página entra al instante.
+ * Por qué: Next precarga el contenido de la ruta pero no sus imágenes. La primera vez que se entraba
+ * a una página, la animación de entrada arrancaba con el hero vacío y las imágenes iban apareciendo
+ * de a una (~30 pedidos de 300–900 ms en Render). La segunda vez, con todo en caché, se veía perfecta.
+ * Con esto la primera vez se ve igual que la segunda.
  *
- * Cómo: se pide el HTML estático de la ruta (ya está cacheado en el servidor) y se copian sus
- * <link rel="preload"> de imágenes y fuentes al documento actual. Son las mismas pistas que el servidor
- * genera para esa página (next/image con `preload`, fuentes de next/font), con su srcset y sizes exactos,
- * así que el navegador baja justo la versión que después va a usar.
+ * Cómo: se pide el HTML estático de la ruta (cacheado en el servidor) y se descargan:
+ *  - las imágenes marcadas como principales (<link rel="preload"> que genera next/image con `preload`),
+ *  - todas las imágenes de las dos primeras secciones (el hero y lo que asoma debajo),
+ *  - las fuentes de la página.
+ * Las imágenes se bajan con `new Image()` usando el mismo srcset/sizes que la página real, así el
+ * navegador elige la misma versión y después la toma de su caché.
  */
 
-const requested = new Set<string>();
-const injected = new Set<string>();
+const requested = new Map<string, Promise<void>>();
+const warmed = new Set<string>();
+const fonts = new Set<string>();
+// Referencias vivas mientras descargan.
+const pending = new Set<HTMLImageElement>();
 
-function shouldSkip() {
-  // Respeta el "ahorro de datos" del usuario.
-  const connection = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection;
-  return Boolean(connection?.saveData);
+type Connection = { saveData?: boolean; effectiveType?: string };
+
+function connection() {
+  return (navigator as Navigator & { connection?: Connection }).connection;
 }
 
-function inject(link: Element) {
-  const as = link.getAttribute("as");
-  const key = `${as}|${link.getAttribute("imagesrcset") ?? ""}|${link.getAttribute("href") ?? ""}`;
-  if (injected.has(key)) {
+// Ahorro de datos activado o conexión lenta: no se precarga nada.
+export function canPrefetch() {
+  const info = connection();
+  if (info?.saveData) {
+    return false;
+  }
+  return !info?.effectiveType || info.effectiveType === "4g";
+}
+
+function warmImage(src: string | null, srcset: string | null, sizes: string | null) {
+  if ((!src || src.startsWith("data:")) && !srcset) {
     return;
   }
-  injected.add(key);
-  const copy = document.createElement("link");
-  for (const attr of ["rel", "as", "href", "imagesrcset", "imagesizes", "type", "crossorigin", "media"]) {
-    const value = link.getAttribute(attr);
-    if (value !== null) {
-      copy.setAttribute(attr, value);
-    }
+  const key = `${srcset ?? ""}|${src ?? ""}|${sizes ?? ""}`;
+  if (warmed.has(key)) {
+    return;
   }
-  // Prioridad baja: no compite con lo que se está viendo ahora.
-  copy.setAttribute("fetchpriority", "low");
+  warmed.add(key);
+  const img = new Image();
+  img.decoding = "async";
+  img.fetchPriority = "low";
+  if (sizes) {
+    img.sizes = sizes;
+  }
+  if (srcset) {
+    img.srcset = srcset;
+  }
+  if (src) {
+    img.src = src;
+  }
+  pending.add(img);
+  const release = () => pending.delete(img);
+  img.addEventListener("load", release, { once: true });
+  img.addEventListener("error", release, { once: true });
+}
+
+function warmFont(link: Element) {
+  const href = link.getAttribute("href");
+  if (!href || fonts.has(href)) {
+    return;
+  }
+  fonts.add(href);
+  const copy = document.createElement("link");
+  copy.rel = "preload";
+  copy.as = "font";
+  copy.href = href;
+  copy.type = link.getAttribute("type") ?? "font/woff2";
+  copy.crossOrigin = "anonymous";
   document.head.appendChild(copy);
 }
 
-export function prefetchRouteAssets(href: string | null | undefined) {
-  if (!href || typeof window === "undefined" || shouldSkip()) {
-    return;
+export function prefetchRouteAssets(href: string | null | undefined): Promise<void> {
+  if (!href || typeof window === "undefined" || !canPrefetch()) {
+    return Promise.resolve();
   }
   let url: URL;
   try {
     url = new URL(href, window.location.href);
   } catch {
-    return;
+    return Promise.resolve();
   }
   const path = url.pathname;
   if (url.origin !== window.location.origin || path === window.location.pathname || path.startsWith("/studio")) {
-    return;
+    return Promise.resolve();
   }
-  if (requested.has(path)) {
-    return;
+  const existing = requested.get(path);
+  if (existing) {
+    return existing;
   }
-  requested.add(path);
 
-  fetch(path, { credentials: "same-origin", priority: "low" } as RequestInit)
+  const job = fetch(path, { credentials: "same-origin", priority: "low" } as RequestInit)
     .then((response) => (response.ok ? response.text() : ""))
     .then((html) => {
       if (!html) {
         return;
       }
       const doc = new DOMParser().parseFromString(html, "text/html");
-      doc.head
-        .querySelectorAll('link[rel="preload"][as="image"], link[rel="preload"][as="font"]')
-        .forEach(inject);
+      doc.head.querySelectorAll('link[rel="preload"][as="image"]').forEach((link) => {
+        warmImage(link.getAttribute("href"), link.getAttribute("imagesrcset"), link.getAttribute("imagesizes"));
+      });
+      doc.head.querySelectorAll('link[rel="preload"][as="font"]').forEach(warmFont);
+      // Las dos primeras secciones: lo que se ve al entrar y lo que asoma justo debajo.
+      Array.from(doc.querySelectorAll("main section"))
+        .slice(0, 2)
+        .forEach((section) =>
+          section
+            .querySelectorAll("img")
+            .forEach((img) => warmImage(img.getAttribute("src"), img.getAttribute("srcset"), img.getAttribute("sizes"))),
+        );
     })
     .catch(() => {
-      // Se reintenta en la próxima intención.
+      // Se reintenta en la próxima oportunidad.
       requested.delete(path);
     });
+  requested.set(path, job);
+  return job;
+}
+
+// Precarga varias rutas de a una, con una pausa entre cada una para no competir con la página actual.
+export async function prefetchRoutesInSequence(hrefs: string[], pauseMs = 600) {
+  for (const href of hrefs) {
+    if (!canPrefetch()) {
+      return;
+    }
+    await prefetchRouteAssets(href);
+    await new Promise((resolve) => setTimeout(resolve, pauseMs));
+  }
 }

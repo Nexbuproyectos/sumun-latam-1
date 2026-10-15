@@ -162,10 +162,10 @@ export function ComunidadSection() {
                   onClick={() => setActivo(index)}
                 >
                   <span className={`${styles.foto} ${item.photo.box}`} aria-hidden="true">
-                    <img className={item.photo.img} src={item.photo.src} alt="" />
+                    <img loading="lazy" decoding="async" className={item.photo.img} src={item.photo.src} alt="" />
                   </span>
                   <span className={styles.rolLabel}>{item.label}</span>
-                  <img
+                  <img loading="lazy" decoding="async"
                     className={styles.flecha}
                     src="/images/diagnostico/flecha-rol.svg"
                     alt=""
@@ -186,7 +186,7 @@ export function ComunidadSection() {
             {rol.beneficios.map((beneficio) => (
               <li key={beneficio.title} className={styles.beneficio}>
                 <span className={styles.badge} style={{ background: ICON_COLORS[beneficio.icon] }} aria-hidden="true">
-                  <img src={`/images/diagnostico/ic-${beneficio.icon}.svg`} alt="" width={20} height={20} />
+                  <img loading="lazy" decoding="async" src={`/images/diagnostico/ic-${beneficio.icon}.svg`} alt="" width={20} height={20} />
                 </span>
                 <span className={styles.beneficioText}>
                   <span className={styles.beneficioTitle}>{beneficio.title}</span>
@@ -204,7 +204,7 @@ export function ComunidadSection() {
 
       {/* Onda de vidrio (1439 × 778, estirada como en Figma): pasa por encima del modelo de madurez. */}
       <div className={styles.onda} aria-hidden="true">
-        <img src="/images/diagnostico/onda.webp" alt="" />
+        <img loading="lazy" decoding="async" src="/images/diagnostico/onda.webp" alt="" />
       </div>
     </section>
   );

@@ -44,7 +44,7 @@ export function DiagVideoSection() {
             hacerlo y bajo qué criterios pedagógicos incorporarla.
           </p>
           <a href={ESTUDIO_URL} className={styles.descarga}>
-            <img src="/images/diagnostico/archivo-blanco.svg" alt="" width={20} height={20} />
+            <img loading="lazy" decoding="async" src="/images/diagnostico/archivo-blanco.svg" alt="" width={20} height={20} />
             Descargar estudio completo →
           </a>
         </div>
@@ -57,7 +57,7 @@ export function DiagVideoSection() {
             sizes="(max-width: 1100px) 90vw, 533px"
             alt="Cristóbal Cobo hablando a cámara"
           />
-          <img
+          <img loading="lazy" decoding="async"
             className={styles.play}
             src="/images/masterclass/play.svg"
             alt=""

@@ -19,7 +19,7 @@ export function VideoSection() {
             sizes="(max-width: 1100px) 90vw, 533px"
             alt="Cristóbal Cobo hablando a cámara"
           />
-          <img
+          <img loading="lazy" decoding="async"
             className={styles.play}
             src="/images/masterclass/play.svg"
             alt=""
@@ -64,7 +64,7 @@ export function VideoSection() {
             </a>
           </div>
           <a href="#" className={styles.descarga}>
-            <img src="/images/masterclass/archivo.svg" alt="" width={20} height={20} />
+            <img loading="lazy" decoding="async" src="/images/masterclass/archivo.svg" alt="" width={20} height={20} />
             <span>Descargar estudio completo</span>
           </a>
         </div>

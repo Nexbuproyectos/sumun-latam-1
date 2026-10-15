@@ -58,9 +58,9 @@ export function FranjaSection() {
             aria-hidden="true"
           >
             <span className={styles.burbujaFoto} style={{ width: b.inner, height: b.inner }}>
-              <img src={`${C}/${b.src}`} alt="" style={b.img} />
+              <img loading="lazy" decoding="async" src={`${C}/${b.src}`} alt="" style={b.img} />
             </span>
-            {b.aro ? <img className={styles.aro} src={`${C}/${b.aro}`} alt="" width={b.size} height={b.size} /> : null}
+            {b.aro ? <img loading="lazy" decoding="async" className={styles.aro} src={`${C}/${b.aro}`} alt="" width={b.size} height={b.size} /> : null}
           </span>
         ))}
 
@@ -71,7 +71,7 @@ export function FranjaSection() {
             style={{ left: i.x, top: i.y, width: i.size, height: i.size, filter: i.blur ? `blur(${i.blur}px)` : undefined }}
             aria-hidden="true"
           >
-            <img
+            <img loading="lazy" decoding="async"
               src={`${C}/${i.src}`}
               alt=""
               width={i.w}

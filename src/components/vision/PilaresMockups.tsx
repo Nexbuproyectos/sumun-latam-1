@@ -22,7 +22,7 @@ const puntosReflejo: [number, number, "a" | "b" | "c"][] = [
 
 function Punto({ x, y, v }: { x: number; y: number; v: "a" | "b" | "c" }) {
   return (
-    <img
+    <img loading="lazy" decoding="async"
       className={styles.punto}
       src={`${P}/punto-${v}.svg`}
       alt=""
@@ -43,7 +43,7 @@ export function HighTechMockup() {
 
       <div className={styles.scan}>
         <div className={styles.scanImage}>
-          <img src={`${P}/escaneo.jpg`} alt="" width={443} height={702} />
+          <img loading="lazy" decoding="async" src={`${P}/escaneo.jpg`} alt="" width={443} height={702} />
           <span className={styles.scanGlow} />
         </div>
         {puntos.map(([x, y, v], i) => (
@@ -53,16 +53,16 @@ export function HighTechMockup() {
 
       <div className={styles.scanReflejo}>
         <div className={styles.scanReflejoImage}>
-          <img src={`${P}/escaneo-reflejo.png`} alt="" width={443} height={702} />
+          <img loading="lazy" decoding="async" src={`${P}/escaneo-reflejo.png`} alt="" width={443} height={702} />
         </div>
         {puntosReflejo.map(([x, y, v], i) => (
           <Punto key={i} x={x} y={y} v={v} />
         ))}
       </div>
 
-      <img className={styles.lineas} src={`${P}/lineas-escaner.svg`} alt="" width={409.2} height={123.481} />
+      <img loading="lazy" decoding="async" className={styles.lineas} src={`${P}/lineas-escaner.svg`} alt="" width={409.2} height={123.481} />
       <div className={styles.htBlanco} />
-      <img className={styles.botonEscaner} src={`${P}/boton-escaner.svg`} alt="" width={114.839} height={113.839} />
+      <img loading="lazy" decoding="async" className={styles.botonEscaner} src={`${P}/boton-escaner.svg`} alt="" width={114.839} height={113.839} />
       <div className={styles.htFade} />
 
       <div className={styles.stats}>
@@ -74,15 +74,15 @@ export function HighTechMockup() {
         <span className={styles.statLabel} style={{ left: 309, top: 44.86 }}>Incorrectas</span>
         <span className={styles.statNum} style={{ left: 331, top: 79.5 }}>2</span>
         <span className={styles.statLabel} style={{ left: 310, top: 88.86 }}>Ilegible</span>
-        <img className={styles.statIcon} style={{ left: 234.5, top: 35.5 }} src={`${P}/icon-check.svg`} alt="" width={13.8125} height={13.8125} />
-        <img className={styles.statIcon} style={{ left: 234.5, top: 80.5 }} src={`${P}/icon-attention.svg`} alt="" width={15.5833} height={15.5833} />
-        <img className={styles.statIcon} style={{ left: 317.5, top: 80.5 }} src={`${P}/icon-caution.svg`} alt="" width={17} height={14.875} />
-        <img className={styles.statIcon} style={{ left: 319, top: 35.5 }} src={`${P}/icon-x.svg`} alt="" width={13.8125} height={13.8125} />
+        <img loading="lazy" decoding="async" className={styles.statIcon} style={{ left: 234.5, top: 35.5 }} src={`${P}/icon-check.svg`} alt="" width={13.8125} height={13.8125} />
+        <img loading="lazy" decoding="async" className={styles.statIcon} style={{ left: 234.5, top: 80.5 }} src={`${P}/icon-attention.svg`} alt="" width={15.5833} height={15.5833} />
+        <img loading="lazy" decoding="async" className={styles.statIcon} style={{ left: 317.5, top: 80.5 }} src={`${P}/icon-caution.svg`} alt="" width={17} height={14.875} />
+        <img loading="lazy" decoding="async" className={styles.statIcon} style={{ left: 319, top: 35.5 }} src={`${P}/icon-x.svg`} alt="" width={13.8125} height={13.8125} />
       </div>
 
-      <img className={styles.anilloResultado} src={`${P}/anillo-resultado.svg`} alt="" width={241.452} height={241.452} />
+      <img loading="lazy" decoding="async" className={styles.anilloResultado} src={`${P}/anillo-resultado.svg`} alt="" width={241.452} height={241.452} />
       <div className={styles.anilloBorde}>
-        <img src={`${P}/anillo-resultado-borde.svg`} alt="" width={237.624} height={225.328} />
+        <img loading="lazy" decoding="async" src={`${P}/anillo-resultado-borde.svg`} alt="" width={237.624} height={225.328} />
       </div>
       <div className={styles.resultado}>
         <span className={styles.resultadoNum}>75%</span>
@@ -109,7 +109,7 @@ export function CurricularMockup() {
       <div className={styles.icFadeTop} />
 
       <div className={styles.avatar}>
-        <img src={`${P}/estudiante.jpg`} alt="" width={112.737} height={112.737} />
+        <img loading="lazy" decoding="async" src={`${P}/estudiante.jpg`} alt="" width={112.737} height={112.737} />
       </div>
 
       <div className={styles.icTabs}>
@@ -119,7 +119,7 @@ export function CurricularMockup() {
       </div>
 
       <div className={styles.anilloAsistencia}>
-        <img src={`${P}/anillo-asistencia.png`} alt="" width={331.237} height={313.699} />
+        <img loading="lazy" decoding="async" src={`${P}/anillo-asistencia.png`} alt="" width={331.237} height={313.699} />
       </div>
       <div className={styles.sombraAsistencia} />
       <div className={styles.asistencia}>
@@ -133,7 +133,7 @@ export function CurricularMockup() {
             <span className={styles.materiaPct} style={{ left: m.textLeft }}>{m.pct}</span>
             <span className={styles.materiaName} style={{ left: m.textLeft }}>{m.name}</span>
             <span className={`${styles.tile} ${m.tile}`} />
-            <img className={styles.materiaIcon} style={m.iconStyle} src={`${P}/${m.icon}`} alt="" width={m.w} height={m.h} />
+            <img loading="lazy" decoding="async" className={styles.materiaIcon} style={m.iconStyle} src={`${P}/${m.icon}`} alt="" width={m.w} height={m.h} />
           </div>
         ))}
       </div>

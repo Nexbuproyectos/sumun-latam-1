@@ -20,7 +20,7 @@ export function DiagHero() {
         <div className={styles.decorStage}>
           <div className={styles.decor}>
             <div className={styles.decorInner}>
-              <img src="/images/banner/decorativo-3d.webp" alt="" />
+              <img loading="lazy" decoding="async" src="/images/banner/decorativo-3d.webp" alt="" />
             </div>
           </div>
         </div>
@@ -69,26 +69,26 @@ export function DiagHero() {
           <div className={styles.velo} />
           <div className={styles.vidrioAlto} style={{ backgroundImage: vidrioAlto }} />
           <div className={styles.vidrioBajo} style={{ backgroundImage: vidrioBajo }} />
-          <img className={styles.elipse301} src="/images/diagnostico/elipse-301.svg" alt="" width={471} height={473} />
-          <img className={styles.elipse302} src="/images/diagnostico/elipse-302.svg" alt="" width={699} height={698} />
+          <img loading="lazy" decoding="async" className={styles.elipse301} src="/images/diagnostico/elipse-301.svg" alt="" width={471} height={473} />
+          <img loading="lazy" decoding="async" className={styles.elipse302} src="/images/diagnostico/elipse-302.svg" alt="" width={699} height={698} />
 
           <div className={styles.chart}>
-            <img src="/images/diagnostico/ic-chart.svg" alt="" width={17.81} height={17.81} />
+            <img loading="lazy" decoding="async" src="/images/diagnostico/ic-chart.svg" alt="" width={17.81} height={17.81} />
           </div>
           <div className={`${styles.icono} ${styles.people}`}>
-            <img src="/images/diagnostico/ic-people.svg" alt="" />
+            <img loading="lazy" decoding="async" src="/images/diagnostico/ic-people.svg" alt="" />
           </div>
           <div className={`${styles.icono} ${styles.books}`}>
-            <img src="/images/diagnostico/ic-books.svg" alt="" />
+            <img loading="lazy" decoding="async" src="/images/diagnostico/ic-books.svg" alt="" />
           </div>
           <div className={`${styles.icono} ${styles.calendar}`}>
-            <img src="/images/diagnostico/ic-calendar.svg" alt="" />
+            <img loading="lazy" decoding="async" src="/images/diagnostico/ic-calendar.svg" alt="" />
           </div>
           <div className={styles.play}>
-            <img className={styles.playE53} src="/images/diagnostico/elipse-53.svg" alt="" />
-            <img className={styles.playE54} src="/images/diagnostico/elipse-54.svg" alt="" />
+            <img loading="lazy" decoding="async" className={styles.playE53} src="/images/diagnostico/elipse-53.svg" alt="" />
+            <img loading="lazy" decoding="async" className={styles.playE54} src="/images/diagnostico/elipse-54.svg" alt="" />
             <span className={styles.playIcon}>
-              <img src="/images/diagnostico/ic-play.svg" alt="" />
+              <img loading="lazy" decoding="async" src="/images/diagnostico/ic-play.svg" alt="" />
             </span>
           </div>
         </div>

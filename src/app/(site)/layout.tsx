@@ -3,6 +3,7 @@ import { Header } from "@/components/header/Header";
 import { ImageFade } from "@/components/motion/ImageFade";
 import { NavigationProgress } from "@/components/motion/NavigationProgress";
 import { RevealObserver } from "@/components/motion/RevealObserver";
+import { RouteAssetPrefetch } from "@/components/motion/RouteAssetPrefetch";
 
 export default function SiteLayout({
   children,
@@ -18,6 +19,7 @@ export default function SiteLayout({
       <Footer />
       <RevealObserver />
       <ImageFade />
+      <RouteAssetPrefetch />
     </div>
   );
 }

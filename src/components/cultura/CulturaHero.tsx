@@ -25,13 +25,13 @@ export function CulturaHero() {
 
         {/* Widget de pasos (difuminado, detrás de las fotos) */}
         <div className={styles.pasos} aria-hidden="true">
-          <img className={styles.pasosLinea} src={`${C}/w-linea-a.svg`} alt="" width={170.953} height={0.8634} />
+          <img loading="lazy" decoding="async" className={styles.pasosLinea} src={`${C}/w-linea-a.svg`} alt="" width={170.953} height={0.8634} />
           {[14.68, 77.71, 140.73].map((x) => (
             <span key={x} className={styles.paso} style={{ left: x }}>
               <span className={styles.pasoAro}>
                 <span />
               </span>
-              <img src={`${C}/w-check-a.svg`} alt="" width={13.8144} height={10.3608} />
+              <img loading="lazy" decoding="async" src={`${C}/w-check-a.svg`} alt="" width={13.8144} height={10.3608} />
             </span>
           ))}
         </div>
@@ -53,7 +53,7 @@ export function CulturaHero() {
         {/* Calendario AM/PM */}
         <div className={styles.calendario} aria-hidden="true">
           {[34.89, 97.92, 159.83].map((y, i) => (
-            <img
+            <img loading="lazy" decoding="async"
               key={y}
               className={styles.calLinea}
               style={{ top: y - 1.13, left: i === 0 ? 18.01 : 19.13 }}
@@ -92,17 +92,17 @@ export function CulturaHero() {
           <div className={styles.dias}>
             {dias.map((d, i) => (
               <span key={i} className={styles.dia}>
-                <img src={`${C}/w-check-b.svg`} alt="" width={8.64865} height={6.48649} />
+                <img loading="lazy" decoding="async" src={`${C}/w-check-b.svg`} alt="" width={8.64865} height={6.48649} />
                 <span className={styles.diaCirculo}>
                   {i === 1 ? (
                     <>
-                      <img className={styles.diaMedioA} src={`${C}/w-medio-a.svg`} alt="" width={10.8108} height={10.8108} />
-                      <img className={styles.diaMedioB} src={`${C}/w-medio-b.svg`} alt="" width={7.56757} height={12.973} />
+                      <img loading="lazy" decoding="async" className={styles.diaMedioA} src={`${C}/w-medio-a.svg`} alt="" width={10.8108} height={10.8108} />
+                      <img loading="lazy" decoding="async" className={styles.diaMedioB} src={`${C}/w-medio-b.svg`} alt="" width={7.56757} height={12.973} />
                     </>
                   ) : (
                     <>
-                      <img className={styles.diaAnillo} src={`${C}/w-anillo.svg`} alt="" width={19.4595} height={19.4595} />
-                      <img className={styles.diaPunto} src={`${C}/w-punto.svg`} alt="" width={12.973} height={12.973} />
+                      <img loading="lazy" decoding="async" className={styles.diaAnillo} src={`${C}/w-anillo.svg`} alt="" width={19.4595} height={19.4595} />
+                      <img loading="lazy" decoding="async" className={styles.diaPunto} src={`${C}/w-punto.svg`} alt="" width={12.973} height={12.973} />
                     </>
                   )}
                 </span>

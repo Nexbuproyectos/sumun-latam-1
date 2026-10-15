@@ -40,7 +40,7 @@ export function Footer() {
       <div className={styles.inner}>
         <div className={styles.top}>
           <div className={styles.brand}>
-            <img
+            <img loading="lazy" decoding="async"
               className={styles.logo}
               src="/images/footer/logo-blanco@3x.png"
               alt="Sumun"
@@ -72,7 +72,7 @@ export function Footer() {
               <span className={styles.tutorTitle}>
                 Tutor IA
                 <span className={styles.stars} aria-hidden="true">
-                  <img
+                  <img loading="lazy" decoding="async"
                     src="/images/footer/estrellas.svg"
                     alt=""
                     width={19.27}
@@ -80,7 +80,7 @@ export function Footer() {
                   />
                 </span>
               </span>
-              <img
+              <img loading="lazy" decoding="async"
                 src="/images/footer/abrir.svg"
                 alt=""
                 width={24}
@@ -106,7 +106,7 @@ export function Footer() {
           </div>
           <div className={styles.social}>
             <a href="#" aria-label="Instagram">
-              <img
+              <img loading="lazy" decoding="async"
                 src="/images/footer/instagram.svg"
                 alt=""
                 width={24}
@@ -114,7 +114,7 @@ export function Footer() {
               />
             </a>
             <a href="#" aria-label="YouTube">
-              <img
+              <img loading="lazy" decoding="async"
                 src="/images/footer/youtube.svg"
                 alt=""
                 width={24}

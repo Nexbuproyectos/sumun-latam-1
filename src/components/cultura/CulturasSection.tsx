@@ -15,7 +15,7 @@ export function CulturasSection() {
   return (
     <section className={styles.section} aria-labelledby="culturas-title">
       <div className={styles.decor} aria-hidden="true" data-parallax="fast">
-        <img src="/images/banner/decorativo-3d.webp" alt="" />
+        <img loading="lazy" decoding="async" src="/images/banner/decorativo-3d.webp" alt="" />
       </div>
 
       <div className={styles.stage}>
@@ -37,7 +37,7 @@ export function CulturasSection() {
             {culturas.map((c) => (
               <li key={c.icon} className={styles.item}>
                 <span className={styles.itemIcono} aria-hidden="true">
-                  <img src={`${C}/${c.icon}`} alt="" width={c.w} height={c.h} />
+                  <img loading="lazy" decoding="async" src={`${C}/${c.icon}`} alt="" width={c.w} height={c.h} />
                 </span>
                 <div className={styles.itemTexto}>
                   <h3 className={styles.itemTitle}>
@@ -66,7 +66,7 @@ export function CulturasSection() {
             alt="Vista del IA Tutor de Sumun: explora por materias"
           />
         </div>
-        <img className={styles.cursor} src={`${C}/cursor.svg`} alt="" width={93.143} height={95.0594} aria-hidden="true" />
+        <img loading="lazy" decoding="async" className={styles.cursor} src={`${C}/cursor.svg`} alt="" width={93.143} height={95.0594} aria-hidden="true" />
       </div>
     </section>
   );

@@ -44,26 +44,26 @@ export function AsiSeVeSection() {
           <li className={`${styles.card} ${styles.cardEstudiantes}`}>
             <div className={styles.art} aria-hidden="true">
               <span className={styles.velo} style={at(-176, -17, 843, 610)} />
-              <img style={at(-87.64, -79)} src={`${I}/est-ellipse.svg`} alt="" width={439} height={439} />
+              <img loading="lazy" decoding="async" style={at(-87.64, -79)} src={`${I}/est-ellipse.svg`} alt="" width={439} height={439} />
               <span className={styles.planeta} style={at(-9.63, -66.76, 60.97, 60.97)}>
-                <img src={`${I}/est-planet.svg`} alt="" width={31.3278} height={31.3278} />
+                <img loading="lazy" decoding="async" src={`${I}/est-planet.svg`} alt="" width={31.3278} height={31.3278} />
               </span>
               <span className={styles.fotoCirculo} style={at(-47, -44, 347, 347)}>
                 <span className={styles.capa}>
-                  <img src={`${I}/estudiante-a.jpg`} alt="" style={{ left: "-43.47%", top: "1.95%", width: "189.5%", height: "284.22%" }} />
+                  <img loading="lazy" decoding="async" src={`${I}/estudiante-a.jpg`} alt="" style={{ left: "-43.47%", top: "1.95%", width: "189.5%", height: "284.22%" }} />
                 </span>
                 <span className={styles.capa}>
-                  <img src={`${I}/estudiante-b.jpg`} alt="" style={{ left: "-76.35%", top: "-14.21%", width: "262.36%", height: "174.93%" }} />
+                  <img loading="lazy" decoding="async" src={`${I}/estudiante-b.jpg`} alt="" style={{ left: "-76.35%", top: "-14.21%", width: "262.36%", height: "174.93%" }} />
                 </span>
               </span>
               <span className={`${styles.vidrio} ${styles.vidrioAtom}`} style={at(-31, 229, 181, 181)}>
-                <img src={`${I}/est-atom.svg`} alt="" width={75.5657} height={75.5695} />
+                <img loading="lazy" decoding="async" src={`${I}/est-atom.svg`} alt="" width={75.5657} height={75.5695} />
               </span>
               <span className={`${styles.vidrio} ${styles.vidrioChat}`} style={at(287.5, 30, 88, 88)}>
-                <img src={`${I}/est-chat.svg`} alt="" width={44.4892} height={44.4892} style={{ translate: "3.06px -1.45px" }} />
+                <img loading="lazy" decoding="async" src={`${I}/est-chat.svg`} alt="" width={44.4892} height={44.4892} style={{ translate: "3.06px -1.45px" }} />
               </span>
               <span className={`${styles.vidrio} ${styles.vidrioChart}`} style={at(256, 248, 63, 63)}>
-                <img src={`${I}/est-chart.svg`} alt="" width={26.5447} height={26.5418} style={{ translate: "2.19px -1.04px" }} />
+                <img loading="lazy" decoding="async" src={`${I}/est-chart.svg`} alt="" width={26.5447} height={26.5418} style={{ translate: "2.19px -1.04px" }} />
               </span>
             </div>
             <p className={styles.cardText}>
@@ -90,7 +90,7 @@ export function AsiSeVeSection() {
                     className={p.front ? `${styles.tile} ${styles.tileFrente}` : styles.tile}
                     style={{ opacity: p.front ? 1 : 0.4, width: 60.87 * p.scale, height: 61.87 * p.scale, left: 9.22 * p.scale, top: 6.71 * p.scale, borderRadius: 18 * p.scale }}
                   >
-                    <img src={`${I}/${p.icon}`} alt="" width={p.iw} height={p.iw} />
+                    <img loading="lazy" decoding="async" src={`${I}/${p.icon}`} alt="" width={p.iw} height={p.iw} />
                   </span>
                   <span className={styles.pildoraTitle} style={{ color: p.color, fontSize: 17.47 * p.scale, left: 81.6 * p.scale, top: 16 * p.scale }}>
                     {p.title}
@@ -109,7 +109,7 @@ export function AsiSeVeSection() {
           {/* Escuelas */}
           <li className={`${styles.card} ${styles.cardEscuelas}`}>
             <div className={styles.art} aria-hidden="true">
-              <img style={at(-25.6, -230.6)} src={`${I}/esc-ellipse.svg`} alt="" width={707.2} height={707.2} />
+              <img loading="lazy" decoding="async" style={at(-25.6, -230.6)} src={`${I}/esc-ellipse.svg`} alt="" width={707.2} height={707.2} />
               <span className={styles.escuelasDegradado} style={at(-24, 0, 415, 574)} />
               <span className={styles.velo} style={at(-176, -12, 843, 605)} />
             </div>

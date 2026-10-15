@@ -74,10 +74,10 @@ export function EvolucionCarousel() {
           </div>
           <div className={styles.arrows}>
             <button type="button" className={styles.arrow} aria-label="Anterior" disabled={edges.start} onClick={() => go(-1)}>
-              <img className={styles.arrowPrev} src="/images/diagnostico/flecha-carrusel.svg" alt="" width={24} height={24} />
+              <img loading="lazy" decoding="async" className={styles.arrowPrev} src="/images/diagnostico/flecha-carrusel.svg" alt="" width={24} height={24} />
             </button>
             <button type="button" className={styles.arrow} aria-label="Siguiente" disabled={edges.end} onClick={() => go(1)}>
-              <img className={styles.arrowNext} src="/images/diagnostico/flecha-carrusel.svg" alt="" width={24} height={24} />
+              <img loading="lazy" decoding="async" className={styles.arrowNext} src="/images/diagnostico/flecha-carrusel.svg" alt="" width={24} height={24} />
             </button>
           </div>
         </div>
@@ -95,15 +95,15 @@ export function EvolucionCarousel() {
             {tarjetas.map((tarjeta, index) => (
               <li key={tarjeta.title} className={styles.card} style={{ width: tarjeta.width }}>
                 <div className={styles.media} aria-hidden="true">
-                  <img className={styles.base} src="/images/diagnostico/carrusel-base.webp" alt="" />
-                  <img
+                  <img loading="lazy" decoding="async" className={styles.base} src="/images/diagnostico/carrusel-base.webp" alt="" />
+                  <img loading="lazy" decoding="async"
                     className={styles.tira}
                     src={`/images/diagnostico/carrusel-${tarjeta.tira}.webp`}
                     alt=""
                     style={{ left: tarjeta.left, top: tarjeta.top }}
                   />
                   {index === 0 ? (
-                    <img className={styles.veloSvg} src="/images/diagnostico/carrusel-velo.svg" alt="" />
+                    <img loading="lazy" decoding="async" className={styles.veloSvg} src="/images/diagnostico/carrusel-velo.svg" alt="" />
                   ) : (
                     <span className={styles.velo} style={{ backgroundImage: velo }} />
                   )}

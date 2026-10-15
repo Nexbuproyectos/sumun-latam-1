@@ -31,7 +31,7 @@ export function SerieSection() {
 
         <a href="#" className={`btn ${styles.verSerie}`}>
           Ver serie completa
-          <img src={`${H}/flecha-diagonal.svg`} alt="" width={24.1502} height={24.1502} />
+          <img loading="lazy" decoding="async" src={`${H}/flecha-diagonal.svg`} alt="" width={24.1502} height={24.1502} />
         </a>
 
         <div className={styles.viewport}>
@@ -57,7 +57,7 @@ export function SerieSection() {
                   </h3>
                   <a className={styles.epLink} href={ep.href}>
                     Ver episodio completo
-                    <img src={`${H}/link-blanco.svg`} alt="" width={14.4186} height={14.4186} />
+                    <img loading="lazy" decoding="async" src={`${H}/link-blanco.svg`} alt="" width={14.4186} height={14.4186} />
                   </a>
                 </li>
               );
@@ -71,7 +71,7 @@ export function SerieSection() {
           aria-label={start < maxStart ? "Siguiente episodio" : "Volver al primer episodio"}
           onClick={() => setStart((s) => (s < maxStart ? s + 1 : 0))}
         >
-          <img src={`${H}/flecha-azul.svg`} alt="" width={24} height={24} />
+          <img loading="lazy" decoding="async" src={`${H}/flecha-azul.svg`} alt="" width={24} height={24} />
         </button>
 
         <article id="conversaciones" className={styles.conversaciones}>
@@ -79,7 +79,7 @@ export function SerieSection() {
             <Image src={`${H}/conversaciones.jpg`} width={2847} height={1262} sizes="(min-width: 1200px) 1290px, 110vw" alt="" />
           </div>
           <span className={styles.convBrillo} aria-hidden="true" />
-          <img
+          <img loading="lazy" decoding="async"
             className={styles.convLogo}
             src={`${H}/conversaciones-logo.png`}
             alt="Conversaciones Sumun"
@@ -97,7 +97,7 @@ export function SerieSection() {
           </p>
           <a className={styles.convLink} href="#">
             Ver video
-            <img src={`${H}/link-blanco-b.svg`} alt="" width={13.414} height={13.414} />
+            <img loading="lazy" decoding="async" src={`${H}/link-blanco-b.svg`} alt="" width={13.414} height={13.414} />
           </a>
         </article>
       </div>

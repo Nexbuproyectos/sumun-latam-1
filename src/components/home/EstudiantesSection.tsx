@@ -137,7 +137,7 @@ export function EstudiantesSection() {
                 <div className={styles.mejor} aria-hidden={!isActive}>
                   <div className={styles.mejorHead}>
                     <h3 className={styles.mejorTitle}>{item.title}</h3>
-                    <img
+                    <img loading="lazy" decoding="async"
                       className={styles.mejorIcon}
                       src="/images/estudiantes/ia.svg"
                       alt=""
@@ -147,7 +147,7 @@ export function EstudiantesSection() {
                   </div>
                   <p className={styles.mejorText}>{item.text}</p>
                   <div className={styles.mejorFoot}>
-                    <img
+                    <img loading="lazy" decoding="async"
                       className={styles.logo}
                       src="/images/estudiantes/sumun-logo.jpg"
                       alt="Sumun"

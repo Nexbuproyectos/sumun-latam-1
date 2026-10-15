@@ -74,7 +74,7 @@ export function ReporteSection() {
                   onClick={() => setActiva(index)}
                 >
                   <span className={styles.flecha} aria-hidden="true">
-                    <img src="/images/diagnostico/flecha-diagonal.svg" alt="" width={61} height={61} />
+                    <img loading="lazy" decoding="async" src="/images/diagnostico/flecha-diagonal.svg" alt="" width={61} height={61} />
                   </span>
                   <span className={styles.funcionText}>
                     <span className={styles.funcionTitle}>{funcion.title}</span>
@@ -94,7 +94,7 @@ export function ReporteSection() {
 
         {/* Mockup "Diagnóstico de IA institucional": 790 × 847, recortado. */}
         <div className={styles.mockup}>
-          <img className={styles.brillo} src="/images/diagnostico/elipse-303.svg" alt="" aria-hidden="true" />
+          <img loading="lazy" decoding="async" className={styles.brillo} src="/images/diagnostico/elipse-303.svg" alt="" aria-hidden="true" />
           <div className={styles.ipads} aria-hidden="true" data-parallax="slow">
             <Image
               src="/images/diagnostico/ipads.png"
@@ -118,7 +118,7 @@ export function ReporteSection() {
               {invitados.map((invitado) => (
                 <li key={invitado.rol} className={`${styles.invitado} ${invitado.className}`}>
                   <span className={styles.invFoto} aria-hidden="true">
-                    <img src={invitado.src} alt="" />
+                    <img loading="lazy" decoding="async" src={invitado.src} alt="" />
                   </span>
                   <span className={styles.invInfo}>
                     <span className={styles.invRol}>{invitado.rol}</span>
@@ -130,7 +130,7 @@ export function ReporteSection() {
                         aria-label={`Copiar enlace para ${invitado.rol}`}
                         onClick={() => copiar(invitado.rol)}
                       >
-                        <img src="/images/diagnostico/ic-copiar.svg" alt="" width={6.193} height={6.193} />
+                        <img loading="lazy" decoding="async" src="/images/diagnostico/ic-copiar.svg" alt="" width={6.193} height={6.193} />
                         <span aria-live="polite">{copiado === invitado.rol ? "¡Copiado!" : "Copiar enlace"}</span>
                       </button>
                     </span>

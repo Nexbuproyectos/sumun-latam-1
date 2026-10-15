@@ -109,7 +109,7 @@ export function MicroMacroSection() {
                     className={styles.pildoraTile}
                     style={{ ...at(p.tile.l, p.tile.t, p.tile.w, p.tile.h), borderRadius: p.tile.r, background: p.tile.bg }}
                   >
-                    <img src={`${I}/${p.icon.src}`} alt="" width={p.icon.w} height={p.icon.h} />
+                    <img loading="lazy" decoding="async" src={`${I}/${p.icon.src}`} alt="" width={p.icon.w} height={p.icon.h} />
                   </span>
                   <span className={styles.pildoraTitle} style={{ left: p.title.cx, top: p.title.t, fontSize: p.title.size, color: p.title.color }}>
                     {p.title.text}
@@ -134,25 +134,25 @@ export function MicroMacroSection() {
                 <span style={{ ...at(-528, -381, 1399, 1018), backgroundImage: vidrioMicro }} />
               </span>
 
-              <img style={at(52.38, 208.01)} src={`${I}/mic-burbuja-b.svg`} alt="" width={341.781} height={70.2937} />
+              <img loading="lazy" decoding="async" style={at(52.38, 208.01)} src={`${I}/mic-burbuja-b.svg`} alt="" width={341.781} height={70.2937} />
               <span className={styles.burbujaText} style={{ left: 79.71, top: 223.69, fontSize: 12.471 }}>
                 En que tema académico puedo ayudarte hoy?
               </span>
 
-              <img style={at(270.41, 290.31)} src={`${I}/mic-burbuja-a.svg`} alt="" width={205.113} height={75.3416} />
+              <img loading="lazy" decoding="async" style={at(270.41, 290.31)} src={`${I}/mic-burbuja-a.svg`} alt="" width={205.113} height={75.3416} />
               <span className={styles.burbujaText} style={{ left: 307.55, top: 305.82, fontSize: 15.038 }}>
                 Números enteros
               </span>
 
               <span className={styles.sombraNaranja} />
-              <img style={at(114.44, 372.6)} src={`${I}/mic-pill.svg`} alt="" width={232.615} height={69.5055} />
+              <img loading="lazy" decoding="async" style={at(114.44, 372.6)} src={`${I}/mic-pill.svg`} alt="" width={232.615} height={69.5055} />
               <span className={styles.burbujaText} style={{ left: 148.87, top: 389.38, fontSize: 15.608 }}>
                 Creando ejercicio
               </span>
-              <img style={at(288.79, 389.38)} src={`${I}/mic-ia.svg`} alt="" width={24.0978} height={24.0978} />
+              <img loading="lazy" decoding="async" style={at(288.79, 389.38)} src={`${I}/mic-ia.svg`} alt="" width={24.0978} height={24.0978} />
 
               <span className={styles.botonMicro}>
-                <img src={`${I}/mic-brain.svg`} alt="" width={16.417} height={16.4155} />
+                <img loading="lazy" decoding="async" src={`${I}/mic-brain.svg`} alt="" width={16.417} height={16.4155} />
                 Quiero comenzar una microhabilidad
               </span>
             </div>

@@ -141,7 +141,7 @@ export function RutaSection() {
                 aria-hidden="true"
               />
 
-              <img
+              <img loading="lazy" decoding="async"
                 className={`${styles.linea} ${styles[`linea_${etapa.id}`]}`}
                 src={`${I}/${etapa.id === "llegada" ? "ruta-linea-lleg.svg" : "ruta-linea.svg"}`}
                 alt=""
@@ -150,7 +150,7 @@ export function RutaSection() {
                 aria-hidden="true"
               />
               {etapa.id === "estaciones" ? (
-                <img
+                <img loading="lazy" decoding="async"
                   className={`${styles.linea} ${styles.linea_estaciones_b}`}
                   src={`${I}/ruta-linea-est-b.svg`}
                   alt=""
@@ -163,7 +163,7 @@ export function RutaSection() {
               <div className={`${styles.contenido} ${styles[`contenido_${etapa.id}`]}`}>
                 {etapa.id !== "estaciones" ? (
                   <span className={styles.icono} aria-hidden="true">
-                    <img
+                    <img loading="lazy" decoding="async"
                       src={`${I}/${etapa.icon.src}`}
                       alt=""
                       width={etapa.icon.w}
@@ -175,7 +175,7 @@ export function RutaSection() {
                 <Contenido id={etapa.id} />
                 {etapa.id === "estaciones" ? (
                   <span className={styles.icono} aria-hidden="true">
-                    <img
+                    <img loading="lazy" decoding="async"
                       src={`${I}/${etapa.icon.src}`}
                       alt=""
                       width={etapa.icon.w}

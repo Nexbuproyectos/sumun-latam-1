@@ -60,7 +60,7 @@ const lineas267 = [379.83, 353.83, 331.83, 309.83, 289.83, 261.83];
 function Capa({ src, style, className }: { src: string; style: CSSProperties; className?: string }) {
   return (
     <span className={`${styles.capa} ${className ?? ""}`}>
-      <img src={src} alt="" style={style} />
+      <img loading="lazy" decoding="async" src={src} alt="" style={style} />
     </span>
   );
 }
@@ -97,7 +97,7 @@ export function BeneficiosSection() {
         <div className={styles.grid}>
           {/* 1. Obtención de resultados */}
           <article className={`${styles.card} ${styles.cardResultados}`}>
-            <img className={styles.abs} style={at(77, 202)} src={`${B}/ia-mini.svg`} alt="" width={11} height={11} />
+            <img loading="lazy" decoding="async" className={styles.abs} style={at(77, 202)} src={`${B}/ia-mini.svg`} alt="" width={11} height={11} />
             <h3 className={styles.textResultados} style={at(37, 33, 289)}>
               <strong>Obtención de resultados: </strong>
               <br />
@@ -105,28 +105,28 @@ export function BeneficiosSection() {
             </h3>
 
             <div className={styles.art} aria-hidden="true">
-              <img className={styles.abs} style={at(226.7, 196.58)} src={`${B}/ellipse-9.svg`} alt="" width={30.8553} height={30.8553} />
+              <img loading="lazy" decoding="async" className={styles.abs} style={at(226.7, 196.58)} src={`${B}/ellipse-9.svg`} alt="" width={30.8553} height={30.8553} />
               <span className={styles.rotado} style={{ ...at(308.57, 98.87, 98.598, 98.598), transform: "rotate(9.05deg)" }}>
-                <img className={styles.abs} style={{ left: "37.57%", top: 0 }} src={`${B}/ellipse-8.svg`} alt="" width={61.5597} height={49.2991} />
+                <img loading="lazy" decoding="async" className={styles.abs} style={{ left: "37.57%", top: 0 }} src={`${B}/ellipse-8.svg`} alt="" width={61.5597} height={49.2991} />
               </span>
               <span className={styles.rotado} style={{ ...at(363.43, -4.86, 98.598, 98.598), transform: "rotate(9.05deg)" }}>
-                <img className={styles.abs} style={{ left: 0, top: 0 }} src={`${B}/ellipse-10.svg`} alt="" width={98.5983} height={98.5983} />
+                <img loading="lazy" decoding="async" className={styles.abs} style={{ left: 0, top: 0 }} src={`${B}/ellipse-10.svg`} alt="" width={98.5983} height={98.5983} />
               </span>
               <span className={styles.rotado} style={{ ...at(290.51, -1.26, 36.779, 36.779), transform: "rotate(17deg)" }}>
-                <img className={styles.abs} style={{ left: "11.51%", top: "11.51%" }} src={`${B}/star-1.svg`} alt="" width={28.3104} height={28.3104} />
+                <img loading="lazy" decoding="async" className={styles.abs} style={{ left: "11.51%", top: "11.51%" }} src={`${B}/star-1.svg`} alt="" width={28.3104} height={28.3104} />
               </span>
 
               <span className={styles.chatCard} style={at(43.9, 168.95, 306.203, 313.646)} />
               {lineas267.map((t) => (
-                <img key={t} className={styles.abs} style={at(67.65, t - 0.62)} src={`${B}/linea-267.svg`} alt="" width={267} height={1.23421} />
+                <img loading="lazy" decoding="async" key={t} className={styles.abs} style={at(67.65, t - 0.62)} src={`${B}/linea-267.svg`} alt="" width={267} height={1.23421} />
               ))}
               {barras.map(({ key, ...b }) => (
                 <Barra key={key} {...b} />
               ))}
 
-              <img className={styles.abs} style={at(15.1, 143.1)} src={`${B}/burbuja-1a.svg`} alt="" width={313.611} height={85.2473} />
-              <img className={styles.abs} style={at(-11.93, 117.55)} src={`${B}/burbuja-1b.svg`} alt="" width={402.642} height={166.2} />
-              <img className={styles.abs} style={at(19.04, 148.53)} src={`${B}/burbuja-1c.svg`} alt="" width={311.064} height={72.6995} />
+              <img loading="lazy" decoding="async" className={styles.abs} style={at(15.1, 143.1)} src={`${B}/burbuja-1a.svg`} alt="" width={313.611} height={85.2473} />
+              <img loading="lazy" decoding="async" className={styles.abs} style={at(-11.93, 117.55)} src={`${B}/burbuja-1b.svg`} alt="" width={402.642} height={166.2} />
+              <img loading="lazy" decoding="async" className={styles.abs} style={at(19.04, 148.53)} src={`${B}/burbuja-1c.svg`} alt="" width={311.064} height={72.6995} />
               <p className={styles.burbujaText} style={{ ...at(53.9, 171.7, 255.169), fontWeight: 800 }}>
                 Necesito ayuda con los números 🥲
               </p>
@@ -134,7 +134,7 @@ export function BeneficiosSection() {
               <Barra {...barra4} />
 
               <span className={styles.botonMate} style={at(61, 477, 267.928, 43.893)}>
-                <img src={`${B}/icon-book.svg`} alt="" width={21.9463} height={21.9463} />
+                <img loading="lazy" decoding="async" src={`${B}/icon-book.svg`} alt="" width={21.9463} height={21.9463} />
                 Comenzar con Matemáticas
               </span>
 
@@ -142,7 +142,7 @@ export function BeneficiosSection() {
                 <Capa src={`${B}/foto-a.png`} style={recorteA} />
                 <Capa src={`${B}/foto-b.jpg`} style={{ left: "-168.63%", top: "-37.03%", width: "358.85%", height: "238.82%" }} />
               </span>
-              <img className={styles.abs} style={at(108.35, 225.76)} src={`${B}/burbuja-2.svg`} alt="" width={215.493} height={95.1285} />
+              <img loading="lazy" decoding="async" className={styles.abs} style={at(108.35, 225.76)} src={`${B}/burbuja-2.svg`} alt="" width={215.493} height={95.1285} />
               <p className={styles.burbujaText} style={{ ...at(150.07, 252.66, 134.529), fontWeight: 700 }}>
                 Vamos a intentarlo!
               </p>
@@ -154,14 +154,14 @@ export function BeneficiosSection() {
             <article className={`${styles.card} ${styles.cardDatos}`}>
               <div className={styles.art} aria-hidden="true">
                 {lineas349.map(({ t, src }) => (
-                  <img key={t} className={styles.abs} style={at(25, t - 0.62)} src={`${B}/${src}`} alt="" width={349} height={1.23421} />
+                  <img loading="lazy" decoding="async" key={t} className={styles.abs} style={at(25, t - 0.62)} src={`${B}/${src}`} alt="" width={349} height={1.23421} />
                 ))}
                 {lineas530.map((t) => (
-                  <img key={t} className={styles.abs} style={at(25, t - 0.62)} src={`${B}/linea-530.svg`} alt="" width={530} height={1.23421} />
+                  <img loading="lazy" decoding="async" key={t} className={styles.abs} style={at(25, t - 0.62)} src={`${B}/linea-530.svg`} alt="" width={530} height={1.23421} />
                 ))}
-                <img className={styles.abs} style={at(-21.31, 31.71)} src={`${B}/chart-a.svg`} alt="" width={625.61} height={276.783} />
-                <img className={styles.abs} style={at(-44.97, 11)} src={`${B}/chart-b.svg`} alt="" width={691.01} height={342.183} />
-                <img className={styles.abs} style={at(-47.01, 10)} src={`${B}/chart-c.svg`} alt="" width={693.03} height={344.183} />
+                <img loading="lazy" decoding="async" className={styles.abs} style={at(-21.31, 31.71)} src={`${B}/chart-a.svg`} alt="" width={625.61} height={276.783} />
+                <img loading="lazy" decoding="async" className={styles.abs} style={at(-44.97, 11)} src={`${B}/chart-b.svg`} alt="" width={691.01} height={342.183} />
+                <img loading="lazy" decoding="async" className={styles.abs} style={at(-47.01, 10)} src={`${B}/chart-c.svg`} alt="" width={693.03} height={344.183} />
 
                 <span className={styles.punto52} style={at(297.5, 16)}><span /></span>
                 <span className={styles.sombraAnillo} style={{ left: 325.27, top: 41.91 }} />
@@ -186,9 +186,9 @@ export function BeneficiosSection() {
               </h3>
               <div className={styles.art} aria-hidden="true">
                 <span className={styles.sombraNaranja} />
-                <img className={styles.abs} style={at(122, 192.29)} src={`${B}/pill-creando.svg`} alt="" width={132.708} height={55.6117} />
+                <img loading="lazy" decoding="async" className={styles.abs} style={at(122, 192.29)} src={`${B}/pill-creando.svg`} alt="" width={132.708} height={55.6117} />
                 <span className={styles.creando}>Creando</span>
-                <img className={styles.abs} style={at(211.42, 208.05)} src={`${B}/ia-creando.svg`} alt="" width={16.3746} height={16.3746} />
+                <img loading="lazy" decoding="async" className={styles.abs} style={at(211.42, 208.05)} src={`${B}/ia-creando.svg`} alt="" width={16.3746} height={16.3746} />
               </div>
             </article>
 
@@ -199,10 +199,10 @@ export function BeneficiosSection() {
                 <strong>Familias informadas y partícipes</strong> <span>del proceso educativo</span>
               </h3>
               <div className={styles.art} aria-hidden="true">
-                <img className={styles.abs} style={at(54, 98)} src={`${B}/ellipse-49.svg`} alt="" width={287} height={287} />
+                <img loading="lazy" decoding="async" className={styles.abs} style={at(54, 98)} src={`${B}/ellipse-49.svg`} alt="" width={287} height={287} />
                 <span className={styles.planeta} style={at(105, 106, 39.859, 39.859)}>
                   <span className={styles.planetaBrillo} />
-                  <img src={`${B}/icon-planet.svg`} alt="" width={20.4808} height={20.4808} />
+                  <img loading="lazy" decoding="async" src={`${B}/icon-planet.svg`} alt="" width={20.4808} height={20.4808} />
                 </span>
                 <span className={styles.fotoFamilia} style={at(74, 120, 247, 247)}>
                   <Capa src={`${B}/familia-a.jpg`} style={recorteFamiliaA} />
@@ -210,10 +210,10 @@ export function BeneficiosSection() {
                   <span className={styles.burbujaBrillo} />
                 </span>
                 <span className={`${styles.vidrio} ${styles.vidrioAtom}`} style={at(8, 183, 126.824, 126.824)}>
-                  <img src={`${B}/atom-126.svg`} alt="" width={52.9475} height={52.9515} />
+                  <img loading="lazy" decoding="async" src={`${B}/atom-126.svg`} alt="" width={52.9475} height={52.9515} />
                 </span>
                 <span className={`${styles.vidrio} ${styles.vidrioChat}`} style={at(278, 125, 70.659, 70.659)}>
-                  <img src={`${B}/icon-chat.svg`} alt="" width={35.7222} height={35.7222} style={{ translate: "2.46px -1.16px" }} />
+                  <img loading="lazy" decoding="async" src={`${B}/icon-chat.svg`} alt="" width={35.7222} height={35.7222} style={{ translate: "2.46px -1.16px" }} />
                 </span>
               </div>
             </article>
@@ -222,7 +222,7 @@ export function BeneficiosSection() {
             <article className={`${styles.card} ${styles.cardClima}`}>
               <div className={styles.art} aria-hidden="true">
                 <span className={styles.climaFoto} style={at(-22, -9, 436, 410)}>
-                  <img src={`${B}/clima.jpg`} alt="" style={{ left: "4.36%", top: "0.61%", width: "87.39%", height: "62.02%" }} />
+                  <img loading="lazy" decoding="async" src={`${B}/clima.jpg`} alt="" style={{ left: "4.36%", top: "0.61%", width: "87.39%", height: "62.02%" }} />
                 </span>
                 <span className={styles.climaVelo} style={at(-112, -78, 602, 398)} />
               </div>
@@ -236,7 +236,7 @@ export function BeneficiosSection() {
           {/* 6. Acompañamiento al maestro */}
           <article className={`${styles.card} ${styles.cardMaestro}`}>
             <span className={styles.maestroFoto} style={at(-155, -95, 512, 453)} aria-hidden="true">
-              <img src={`${B}/maestro.png`} alt="" style={{ left: "-16.24%", top: "14.47%", width: "132.48%", height: "100%" }} />
+              <img loading="lazy" decoding="async" src={`${B}/maestro.png`} alt="" style={{ left: "-16.24%", top: "14.47%", width: "132.48%", height: "100%" }} />
             </span>
             <h3 className={styles.maestroTitle} style={at(314, 69, 228)}>
               Acompañamiento al maestro
@@ -273,32 +273,32 @@ export function BeneficiosSection() {
               </span>
 
               <span className={`${styles.vidrioNaranja}`} style={{ ...at(148, 83, 64.839, 64.839), borderWidth: 0.926 }}>
-                <img src={`${B}/atom-64.svg`} alt="" width={27.0695} height={27.0734} />
+                <img loading="lazy" decoding="async" src={`${B}/atom-64.svg`} alt="" width={27.0695} height={27.0734} />
                 <span className={styles.fotoIcono} style={at(2.96, 2.96, 57.058, 57.058)}>
-                  <img src={`${B}/foto-d.png`} alt="" style={{ inset: 0, width: "100%", height: "100%", objectPosition: "bottom" }} />
+                  <img loading="lazy" decoding="async" src={`${B}/foto-d.png`} alt="" style={{ inset: 0, width: "100%", height: "100%", objectPosition: "bottom" }} />
                 </span>
               </span>
               <span className={styles.vidrioNaranja} style={{ ...at(360, 40, 86, 86), borderWidth: 1.229 }}>
-                <img src={`${B}/atom-86.svg`} alt="" width={35.9041} height={35.9081} />
+                <img loading="lazy" decoding="async" src={`${B}/atom-86.svg`} alt="" width={35.9041} height={35.9081} />
                 <span className={styles.fotoIcono} style={at(3.93, 3.93, 75.68, 75.68)}>
                   <Capa src={`${B}/familia-a.jpg`} style={recorteFamiliaA} />
                   <Capa src={`${B}/familia-b.jpg`} style={recorteFamiliaB} />
                 </span>
               </span>
               <span className={`${styles.vidrioNaranja} ${styles.vidrioGrande}`} style={at(-21, 150, 230, 230)}>
-                <img src={`${B}/atom-230.svg`} alt="" width={96.0226} height={96.0305} />
+                <img loading="lazy" decoding="async" src={`${B}/atom-230.svg`} alt="" width={96.0226} height={96.0305} />
                 <span className={styles.fotoIcono} style={at(10.51, 10.51, 202.4, 202.4)}>
                   <Capa src={`${B}/foto-c.png`} style={recorteC} className={styles.capa94} />
                 </span>
               </span>
               <span className={styles.vidrioNaranja} style={{ ...at(266, 157, 39, 39), borderWidth: 0.557 }}>
-                <img src={`${B}/atom-39.svg`} alt="" width={16.2821} height={16.286} />
+                <img loading="lazy" decoding="async" src={`${B}/atom-39.svg`} alt="" width={16.2821} height={16.286} />
                 <span className={styles.fotoIconoSinBrillo} style={at(1.78, 1.78, 34.32, 34.32)}>
                   <FotoMini />
                 </span>
               </span>
               <span className={styles.vidrioNaranja} style={{ ...at(263, 115, 10, 10), borderWidth: 0.143 }}>
-                <img src={`${B}/atom-10.svg`} alt="" width={4.17489} height={4.17508} />
+                <img loading="lazy" decoding="async" src={`${B}/atom-10.svg`} alt="" width={4.17489} height={4.17508} />
                 <span className={styles.fotoIconoSinBrillo} style={at(0.46, 0.46, 8.8, 8.8)}>
                   <FotoMini />
                 </span>

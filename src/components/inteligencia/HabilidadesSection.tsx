@@ -41,7 +41,7 @@ export function HabilidadesSection({
           Hackeamos el desarrollo de habilidades
         </h2>
 
-        <img
+        <img loading="lazy" decoding="async"
           className={styles.corazon}
           data-parallax="slow"
           src="/images/inteligencia/corazon.webp"
@@ -70,7 +70,7 @@ export function HabilidadesSection({
           <ul className={styles.sinList}>
             {sinSumun.map((item) => (
               <li key={item}>
-                <img src="/images/inteligencia/icon-x.svg" alt="" width={24} height={24} />
+                <img loading="lazy" decoding="async" src="/images/inteligencia/icon-x.svg" alt="" width={24} height={24} />
                 {item}
               </li>
             ))}

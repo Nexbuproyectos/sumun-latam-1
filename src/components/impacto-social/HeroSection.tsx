@@ -41,7 +41,7 @@ export function HeroSection() {
 
       {iconos.map((icono) => (
         <span key={icono.src} className={`${styles.icono} ${icono.className}`} aria-hidden="true">
-          <img src={icono.src} alt="" width={icono.size} height={icono.size} />
+          <img loading="lazy" decoding="async" src={icono.src} alt="" width={icono.size} height={icono.size} />
         </span>
       ))}
 

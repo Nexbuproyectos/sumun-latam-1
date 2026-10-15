@@ -42,7 +42,7 @@ export function PreguntasSection() {
             className={styles.item}
           >
             <summary className={styles.summary}>
-              <img
+              <img loading="lazy" decoding="async"
                 className={styles.arrow}
                 src="/images/tutor-ia/flecha.svg"
                 alt=""

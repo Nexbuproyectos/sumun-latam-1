@@ -18,7 +18,7 @@ export function AliadosSection() {
       <ul className={styles.logos}>
         {aliados.map((a) => (
           <li key={a.name}>
-            <img src={`${H}/${a.src}`} alt={a.name} width={a.width} height={a.height} />
+            <img loading="lazy" decoding="async" src={`${H}/${a.src}`} alt={a.name} width={a.width} height={a.height} />
           </li>
         ))}
       </ul>

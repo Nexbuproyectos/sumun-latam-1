@@ -12,7 +12,7 @@ export function McHero() {
         <div className={styles.decorStage}>
           <div className={styles.decor}>
             <div className={styles.decorInner}>
-              <img src="/images/banner/decorativo-3d.webp" alt="" />
+              <img loading="lazy" decoding="async" src="/images/banner/decorativo-3d.webp" alt="" />
             </div>
           </div>
         </div>

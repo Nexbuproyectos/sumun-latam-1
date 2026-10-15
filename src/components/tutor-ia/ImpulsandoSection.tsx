@@ -49,7 +49,7 @@ export function ImpulsandoSection() {
           <span className={styles.veil} aria-hidden="true" />
           <a href="#" className={styles.demo}>
             Ver demo IA
-            <img src="/images/tutor-ia/ia-blanco.svg" alt="" width={15} height={15} />
+            <img loading="lazy" decoding="async" src="/images/tutor-ia/ia-blanco.svg" alt="" width={15} height={15} />
           </a>
         </div>
 

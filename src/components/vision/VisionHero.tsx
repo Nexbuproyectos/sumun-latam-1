@@ -39,7 +39,7 @@ export function VisionHero() {
         <div className={styles.visual}>
           {/* El icono grande va detrás de la foto (así está en el diseño). */}
           <span className={`${styles.glass} ${styles.iconHandshake}`} aria-hidden="true">
-            <img src="/images/vision/handshake.svg" alt="" width={77.2927} height={77.2927} />
+            <img loading="lazy" decoding="async" src="/images/vision/handshake.svg" alt="" width={77.2927} height={77.2927} />
           </span>
 
           <div className={styles.photo}>
@@ -59,7 +59,7 @@ export function VisionHero() {
               className={`${styles.glass} ${icono.className}`}
               aria-hidden="true"
             >
-              <img src={icono.src} alt="" width={icono.width} height={icono.height} />
+              <img loading="lazy" decoding="async" src={icono.src} alt="" width={icono.width} height={icono.height} />
             </span>
           ))}
         </div>

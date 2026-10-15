@@ -44,7 +44,7 @@ export function ValoresSection() {
       <div className={styles.card}>
         {/* La composición de la izquierda es la misma para las tres pestañas. */}
         <div className={styles.media} aria-hidden="true">
-          <img
+          <img loading="lazy" decoding="async"
             className={styles.foto}
             src="/images/identidad/valores-foto.jpg"
             alt=""
@@ -62,7 +62,7 @@ export function ValoresSection() {
               Pablo
             </p>
           </div>
-          <img
+          <img loading="lazy" decoding="async"
             className={styles.avatar}
             src="/images/identidad/valores-avatar.png"
             alt=""
@@ -70,7 +70,7 @@ export function ValoresSection() {
             height={306}
           />
 
-          <img
+          <img loading="lazy" decoding="async"
             className={styles.campana}
             src="/images/identidad/campana.png"
             alt=""
@@ -84,7 +84,7 @@ export function ValoresSection() {
           <span className={styles.brillo} />
           <span className={`${styles.burbuja} ${styles.burbujaBuscando}`} />
           <p className={styles.buscando}>Buscando recomendaciones</p>
-          <img
+          <img loading="lazy" decoding="async"
             className={styles.ia}
             src="/images/identidad/ia.svg"
             alt=""
@@ -93,7 +93,7 @@ export function ValoresSection() {
           />
 
           {/* Círculo de vidrio con ícono, cortado por la esquina (export 4x). */}
-          <img
+          <img loading="lazy" decoding="async"
             className={styles.icono4x}
             src="/images/identidad/valores-icono.png"
             alt=""

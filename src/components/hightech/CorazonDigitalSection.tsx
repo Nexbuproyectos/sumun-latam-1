@@ -57,7 +57,7 @@ export function CorazonDigitalSection() {
       <div className={styles.stage}>
         <div className={styles.orbita} aria-hidden="true">
           {anillos.map((a) => (
-            <img
+            <img loading="lazy" decoding="async"
               key={a.src}
               className={a.rotate ? `${styles.anillo} ${styles.anilloGira}` : styles.anillo}
               src={`${H}/${a.src}`}
@@ -74,7 +74,7 @@ export function CorazonDigitalSection() {
               className={styles.flotante}
               style={{ left: f.x, top: f.y, width: f.size, height: f.size }}
             >
-              <img src={`${H}/${f.src}`} alt="" width={f.w} height={f.w} style={f.rotate ? { rotate: `${f.rotate}deg` } : undefined} />
+              <img loading="lazy" decoding="async" src={`${H}/${f.src}`} alt="" width={f.w} height={f.w} style={f.rotate ? { rotate: `${f.rotate}deg` } : undefined} />
             </span>
           ))}
 
@@ -91,7 +91,7 @@ export function CorazonDigitalSection() {
               style={{ left: m.x, top: m.y, width: m.width }}
             >
               <span className={styles.icono} aria-hidden="true">
-                <img src={`${H}/${m.icon}`} alt="" width={m.iconSize} height={m.iconSize} />
+                <img loading="lazy" decoding="async" src={`${H}/${m.icon}`} alt="" width={m.iconSize} height={m.iconSize} />
               </span>
               <div className={styles.moduloTexto}>
                 <h3 className={styles.moduloTitle}>{m.name}</h3>

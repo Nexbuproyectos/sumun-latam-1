@@ -105,7 +105,7 @@ export function NovedadesSection() {
               aria-label="Noticia anterior"
               onClick={() => go(-1)}
             >
-              <img
+              <img loading="lazy" decoding="async"
                 className={styles.arrowPrev}
                 src="/images/novedades/flecha.svg"
                 alt=""
@@ -119,7 +119,7 @@ export function NovedadesSection() {
               aria-label="Noticia siguiente"
               onClick={() => go(1)}
             >
-              <img
+              <img loading="lazy" decoding="async"
                 className={styles.arrowNext}
                 src="/images/novedades/flecha.svg"
                 alt=""
@@ -196,7 +196,7 @@ export function NovedadesSection() {
                     <p className={styles.cardText}>{noticia.text}</p>
                     <a className={styles.link} href={noticia.href}>
                       Leer noticia completa
-                      <img
+                      <img loading="lazy" decoding="async"
                         src="/images/novedades/link.svg"
                         alt=""
                         width={13.414}

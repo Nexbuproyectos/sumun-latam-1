@@ -46,11 +46,11 @@ export function MadurezSection() {
 
         <div className={styles.matriz}>
           <div className={styles.ejes} aria-hidden="true">
-            <img className={styles.masArriba} src="/images/diagnostico/eje-mas.svg" alt="" width={46} height={46} />
-            <img className={styles.ejeVertical} src="/images/diagnostico/eje-vertical.svg" alt="" width={7.364} height={465} />
-            <img className={styles.menos} src="/images/diagnostico/eje-menos.svg" alt="" width={46} height={46} />
-            <img className={styles.ejeHorizontal} src="/images/diagnostico/eje-horizontal.svg" alt="" width={7.364} height={948} />
-            <img className={styles.masDerecha} src="/images/diagnostico/eje-mas.svg" alt="" width={46} height={46} />
+            <img loading="lazy" decoding="async" className={styles.masArriba} src="/images/diagnostico/eje-mas.svg" alt="" width={46} height={46} />
+            <img loading="lazy" decoding="async" className={styles.ejeVertical} src="/images/diagnostico/eje-vertical.svg" alt="" width={7.364} height={465} />
+            <img loading="lazy" decoding="async" className={styles.menos} src="/images/diagnostico/eje-menos.svg" alt="" width={46} height={46} />
+            <img loading="lazy" decoding="async" className={styles.ejeHorizontal} src="/images/diagnostico/eje-horizontal.svg" alt="" width={7.364} height={948} />
+            <img loading="lazy" decoding="async" className={styles.masDerecha} src="/images/diagnostico/eje-mas.svg" alt="" width={46} height={46} />
           </div>
           <p className={styles.labelVertical}>MADUREZ ORGANIZACIONAL</p>
           <p className={styles.labelHorizontal}>ADOPCIÓN Y USO DE IA</p>
@@ -62,7 +62,7 @@ export function MadurezSection() {
                   <h3 className={styles.cardTitle}>{estadio.title}</h3>
                   <p className={styles.cardDesc}>{estadio.text}</p>
                 </div>
-                <img className={styles.cardImg} src={estadio.img} alt="" />
+                <img loading="lazy" decoding="async" className={styles.cardImg} src={estadio.img} alt="" />
               </li>
             ))}
           </ul>

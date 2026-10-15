@@ -143,10 +143,10 @@ export function NovedadesSection() {
 
       {/* Elementos 3D de Figma (522.83 × 702, cover), girados desde su esquina superior izquierda. */}
       <div className={`${styles.decor} ${styles.decorDer}`} aria-hidden="true">
-        <img src="/images/conversaciones-sumun/decorativo-3d.webp" alt="" />
+        <img loading="lazy" decoding="async" src="/images/conversaciones-sumun/decorativo-3d.webp" alt="" />
       </div>
       <div className={`${styles.decor} ${styles.decorIzq}`} aria-hidden="true">
-        <img src="/images/conversaciones-sumun/decorativo-3d.webp" alt="" />
+        <img loading="lazy" decoding="async" src="/images/conversaciones-sumun/decorativo-3d.webp" alt="" />
       </div>
     </section>
   );

@@ -47,7 +47,7 @@ export function RecursosSection() {
               disabled={pagina === 0}
               onClick={() => setPagina((p) => p - 1)}
             >
-              <img className={styles.arrowPrev} src="/images/diagnostico/flecha-carrusel.svg" alt="" width={24} height={24} />
+              <img loading="lazy" decoding="async" className={styles.arrowPrev} src="/images/diagnostico/flecha-carrusel.svg" alt="" width={24} height={24} />
             </button>
             <button
               type="button"
@@ -56,7 +56,7 @@ export function RecursosSection() {
               disabled={pagina >= paginas - 1}
               onClick={() => setPagina((p) => p + 1)}
             >
-              <img className={styles.arrowNext} src="/images/diagnostico/flecha-carrusel.svg" alt="" width={24} height={24} />
+              <img loading="lazy" decoding="async" className={styles.arrowNext} src="/images/diagnostico/flecha-carrusel.svg" alt="" width={24} height={24} />
             </button>
           </div>
         </div>
@@ -73,7 +73,7 @@ export function RecursosSection() {
                   <h3 className={styles.titulo}>{recurso.titulo}</h3>
                 </div>
                 <a className={styles.descargar} href={recurso.archivo} download>
-                  <img src="/images/congreso/descargar.svg" alt="" width={22} height={22} />
+                  <img loading="lazy" decoding="async" src="/images/congreso/descargar.svg" alt="" width={22} height={22} />
                   Descargar
                   <span className="sr-only">: {recurso.titulo}</span>
                 </a>

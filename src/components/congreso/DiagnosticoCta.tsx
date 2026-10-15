@@ -51,7 +51,7 @@ export function DiagnosticoCta() {
             <ul className={styles.bullets}>
               {bullets.map((bullet) => (
                 <li key={bullet}>
-                  <img src="/images/congreso/check.svg" alt="" width={20} height={20} />
+                  <img loading="lazy" decoding="async" src="/images/congreso/check.svg" alt="" width={20} height={20} />
                   {bullet}
                 </li>
               ))}

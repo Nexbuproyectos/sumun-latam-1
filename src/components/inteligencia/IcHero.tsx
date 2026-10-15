@@ -9,7 +9,7 @@ export function IcHero() {
        * sin pasar por el optimizador, que la recomprimía y la pixelaba.
        */}
       <div className={styles.ola} aria-hidden="true">
-        <img
+        <img loading="lazy"
           src="/images/inteligencia/ola-hero@2x.webp"
           width={2216}
           height={1520}

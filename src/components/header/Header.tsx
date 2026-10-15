@@ -4,6 +4,8 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
+import { prefetchRouteAssets } from "@/components/motion/routeAssets";
+
 import styles from "./header.module.css";
 
 type SubItem = { label: string; href: string; description?: string };
@@ -148,7 +150,11 @@ export function Header() {
     setMenu(label);
     navItems
       .find((item) => item.label === label)
-      ?.items?.forEach((sub) => router.prefetch(sub.href.split("#")[0] || "/"));
+      ?.items?.forEach((sub) => {
+        router.prefetch(sub.href.split("#")[0] || "/");
+        // Y sus imágenes principales, para que al hacer click la página entre sin esperar.
+        prefetchRouteAssets(sub.href);
+      });
   };
   const scheduleClose = () => {
     window.clearTimeout(closeTimer.current);

@@ -133,7 +133,7 @@ export function RegistroForm() {
                     </option>
                   ))}
                 </select>
-                <img
+                <img loading="lazy" decoding="async"
                   className={styles.flecha}
                   src="/images/masterclass/flecha-select.svg"
                   alt=""
@@ -184,7 +184,7 @@ function Fecha() {
     <div className={styles.fecha}>
       <p className={styles.fechaTitulo}>Masterclass gratuita · Cupos limitado</p>
       <p className={styles.fechaDetalle}>
-        <img src="/images/masterclass/calendario.svg" alt="" width={14} height={14} />
+        <img loading="lazy" decoding="async" src="/images/masterclass/calendario.svg" alt="" width={14} height={14} />
         4 de noviembre · 5:00 p. m. · Colombia
       </p>
     </div>

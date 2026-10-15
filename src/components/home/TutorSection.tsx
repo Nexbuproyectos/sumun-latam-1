@@ -66,7 +66,7 @@ export function TutorSection() {
           <span className={styles.veil} aria-hidden="true" />
           <a href="#" className={styles.demo}>
             Ver demo IA
-            <img
+            <img loading="lazy" decoding="async"
               src="/images/tutor/ia-blanco.svg"
               alt=""
               width={19.4606}

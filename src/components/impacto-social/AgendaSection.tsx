@@ -72,10 +72,10 @@ export function AgendaSection() {
 
       {/* Elementos 3D (522.83 × 702, cover) girados desde su esquina superior izquierda. */}
       <div className={`${styles.decor} ${styles.decorIzq}`} aria-hidden="true">
-        <img src="/images/impacto-social/decorativo-3d.webp" alt="" />
+        <img loading="lazy" decoding="async" src="/images/impacto-social/decorativo-3d.webp" alt="" />
       </div>
       <div className={`${styles.decor} ${styles.decorDer}`} aria-hidden="true">
-        <img src="/images/impacto-social/decorativo-3d.webp" alt="" />
+        <img loading="lazy" decoding="async" src="/images/impacto-social/decorativo-3d.webp" alt="" />
       </div>
     </section>
   );

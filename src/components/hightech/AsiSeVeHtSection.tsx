@@ -4,10 +4,10 @@ import styles from "./asiSeVeHt.module.css";
 
 // Exportadas de la instancia "Pestaña HIGHT TECH" (cada tarjeta superpone varias fotos recortadas).
 const fotos = [
-  { src: "/images/high-tech/foto-1.png", alt: "Estudiante sonriendo frente a su computadora" },
-  { src: "/images/high-tech/foto-2.png", alt: "Docente con una carpeta en el aula" },
-  { src: "/images/high-tech/foto-3.png", alt: "Madre e hijo revisando el celular juntos" },
-  { src: "/images/high-tech/foto-4.png", alt: "Mujer riendo mientras usa una tablet" },
+  { src: "/images/high-tech/foto-1.jpg", alt: "Estudiante sonriendo frente a su computadora" },
+  { src: "/images/high-tech/foto-2.jpg", alt: "Docente con una carpeta en el aula" },
+  { src: "/images/high-tech/foto-3.jpg", alt: "Madre e hijo revisando el celular juntos" },
+  { src: "/images/high-tech/foto-4.jpg", alt: "Mujer riendo mientras usa una tablet" },
 ];
 
 export function AsiSeVeHtSection() {

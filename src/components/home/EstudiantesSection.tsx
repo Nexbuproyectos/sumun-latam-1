@@ -149,7 +149,7 @@ export function EstudiantesSection() {
                   <div className={styles.mejorFoot}>
                     <img
                       className={styles.logo}
-                      src="/images/estudiantes/sumun-logo.png"
+                      src="/images/estudiantes/sumun-logo.jpg"
                       alt="Sumun"
                     />
                     <p className={styles.tagline}>Somos esa diferencia</p>

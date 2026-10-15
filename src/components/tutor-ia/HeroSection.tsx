@@ -61,7 +61,7 @@ export function HeroSection() {
         </p>
         <Image
           className={`${styles.card} ${styles.tareas}`}
-          src="/images/tutor-ia/ayuda-tareas.png"
+          src="/images/tutor-ia/ayuda-tareas.jpg"
           width={438}
           height={328}
           sizes="11vw"
@@ -77,7 +77,7 @@ export function HeroSection() {
         />
         <Image
           className={`${styles.card} ${styles.preparar}`}
-          src="/images/tutor-ia/preparar-examen.png"
+          src="/images/tutor-ia/preparar-examen.jpg"
           width={441}
           height={326}
           sizes="12vw"
@@ -85,7 +85,7 @@ export function HeroSection() {
         />
         <Image
           className={`${styles.card} ${styles.revisar}`}
-          src="/images/tutor-ia/revisar-conceptos.png"
+          src="/images/tutor-ia/revisar-conceptos.jpg"
           width={436}
           height={322}
           sizes="12vw"

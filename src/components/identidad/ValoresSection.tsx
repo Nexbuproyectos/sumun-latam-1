@@ -46,7 +46,7 @@ export function ValoresSection() {
         <div className={styles.media} aria-hidden="true">
           <img
             className={styles.foto}
-            src="/images/identidad/valores-foto.png"
+            src="/images/identidad/valores-foto.jpg"
             alt=""
             width={1600}
             height={1799}

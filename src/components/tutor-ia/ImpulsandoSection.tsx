@@ -39,7 +39,7 @@ export function ImpulsandoSection() {
         <div className={styles.mockup}>
           <div className={styles.mockupImage}>
             <Image
-              src="/images/tutor-ia/impulsando-mockup.png"
+              src="/images/tutor-ia/impulsando-mockup.jpg"
               width={1262}
               height={872}
               sizes="(min-width: 1100px) 940px, 90vw"

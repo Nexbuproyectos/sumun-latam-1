@@ -76,7 +76,7 @@ export function AsiSeVeSection() {
             <div className={styles.art} aria-hidden="true">
               <span className={styles.veloRadial} style={{ ...at(-14, 0, 425, 599), backgroundImage: veloMaestra1 }} />
               <span className={styles.fotoMaestra} style={at(-172, -9, 683, 780)}>
-                <Image src={`${I}/maestra.png`} width={626} height={626} sizes="683px" alt="" />
+                <Image src={`${I}/maestra.jpg`} width={626} height={626} sizes="683px" alt="" />
               </span>
               <span className={styles.veloRadial} style={{ ...at(-14, 0, 425, 599), backgroundImage: veloMaestra2 }} />
               <span className={styles.bandaDifusa} style={at(-290, -71, 1342, 257)} />

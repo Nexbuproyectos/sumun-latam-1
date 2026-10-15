@@ -37,10 +37,10 @@ export function FranjaSection() {
   return (
     <section className={styles.section} aria-label="Cultura escolar">
       <div className={styles.fondo} aria-hidden="true">
-        <Image src={`${C}/franja-fondo.png`} width={1380} height={921} sizes="100vw" alt="" />
+        <Image src={`${C}/franja-fondo.jpg`} width={1380} height={921} sizes="100vw" alt="" />
       </div>
       <div className={styles.onda} aria-hidden="true">
-        <Image src={`${C}/franja-onda.png`} width={1439} height={655} sizes="100vw" alt="" />
+        <Image src={`${C}/franja-onda.jpg`} width={1439} height={655} sizes="100vw" alt="" />
       </div>
       <span className={styles.fadeTop} aria-hidden="true" />
 

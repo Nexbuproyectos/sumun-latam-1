@@ -59,7 +59,7 @@ export function CulturasSection() {
         {/* Mockup del IA Tutor (captura exportada de Figma) */}
         <div className={styles.mockup}>
           <Image
-            src={`${C}/tutor-mockup.png`}
+            src={`${C}/tutor-mockup.jpg`}
             width={1412}
             height={1110}
             sizes="(min-width: 1100px) 709px, 100vw"

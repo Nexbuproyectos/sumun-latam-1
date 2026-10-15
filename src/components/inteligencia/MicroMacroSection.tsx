@@ -164,7 +164,7 @@ export function MicroMacroSection() {
 
           {/* "Map actor": en Figma es un bloque visual sin contenido (placeholder de video/mapa). */}
           <div className={styles.mapa} aria-hidden="true">
-            <Image src={`${I}/video-placeholder.png`} width={1176} height={418} sizes="(min-width: 1200px) 1177px, 100vw" alt="" />
+            <Image src={`${I}/video-placeholder.jpg`} width={1176} height={418} sizes="(min-width: 1200px) 1177px, 100vw" alt="" />
           </div>
         </div>
       </div>

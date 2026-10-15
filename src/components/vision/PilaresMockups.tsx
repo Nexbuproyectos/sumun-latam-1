@@ -43,7 +43,7 @@ export function HighTechMockup() {
 
       <div className={styles.scan}>
         <div className={styles.scanImage}>
-          <img src={`${P}/escaneo.png`} alt="" width={443} height={702} />
+          <img src={`${P}/escaneo.jpg`} alt="" width={443} height={702} />
           <span className={styles.scanGlow} />
         </div>
         {puntos.map(([x, y, v], i) => (

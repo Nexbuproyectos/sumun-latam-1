@@ -23,7 +23,7 @@ const etapas: Etapa[] = [
     label: "Punto de partida",
     title: "Punto de partida",
     icon: { src: "ruta-home.svg", w: 51.3834, h: 51.3834 },
-    photo: { src: "ruta-partida.png", w: 3840, h: 2160, className: styles.fotoPartida },
+    photo: { src: "ruta-partida.jpg", w: 3840, h: 2160, className: styles.fotoPartida },
     side: "left",
   },
   {
@@ -31,7 +31,7 @@ const etapas: Etapa[] = [
     label: "Estaciones",
     title: "Estaciones",
     icon: { src: "ruta-route.svg", w: 51.3834, h: 51.3834, rotate: true },
-    photo: { src: "ruta-estaciones.png", w: 2048, h: 1080, className: styles.fotoEstaciones },
+    photo: { src: "ruta-estaciones.jpg", w: 2048, h: 1080, className: styles.fotoEstaciones },
     side: "right",
   },
   {
@@ -39,7 +39,7 @@ const etapas: Etapa[] = [
     label: "Punto de llegada",
     title: "Punto de llegada",
     icon: { src: "ruta-medal.svg", w: 47.437, h: 48.1719 },
-    photo: { src: "ruta-llegada.png", w: 2048, h: 1080, className: styles.fotoLlegada },
+    photo: { src: "ruta-llegada.jpg", w: 2048, h: 1080, className: styles.fotoLlegada },
     side: "left",
   },
 ];

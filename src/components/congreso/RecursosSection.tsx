@@ -9,12 +9,12 @@ type Recurso = { autor: string; titulo: string; imagen: string; archivo: string 
 
 // Presentaciones del congreso. "Nombre de autor" y los archivos ("#") están así en Figma: faltan los datos reales.
 const recursos: Recurso[] = [
-  { autor: "Eddie Tapiero", titulo: "Cuando un sueño se convierte en estrategia", imagen: "/images/congreso/recurso-1.png", archivo: "#" },
-  { autor: "Nombre de autor", titulo: "Diversidad, género y evidencia para educar", imagen: "/images/congreso/recurso-2.png", archivo: "#" },
-  { autor: "Gustavo Rodríguez", titulo: "Terpel Panamá", imagen: "/images/congreso/recurso-3.png", archivo: "#" },
-  { autor: "Ernesto Nuñez", titulo: "23 manos una duda", imagen: "/images/congreso/recurso-4.png", archivo: "#" },
-  { autor: "Hector Ruiz", titulo: "El esfuerzo inteligente detrás del aprendizaje eficaz", imagen: "/images/congreso/recurso-5.png", archivo: "#" },
-  { autor: "Nombre de autor", titulo: "Hay ciudades que se visitan. Panamá se interpreta", imagen: "/images/congreso/recurso-6.png", archivo: "#" },
+  { autor: "Eddie Tapiero", titulo: "Cuando un sueño se convierte en estrategia", imagen: "/images/congreso/recurso-1.jpg", archivo: "#" },
+  { autor: "Nombre de autor", titulo: "Diversidad, género y evidencia para educar", imagen: "/images/congreso/recurso-2.jpg", archivo: "#" },
+  { autor: "Gustavo Rodríguez", titulo: "Terpel Panamá", imagen: "/images/congreso/recurso-3.jpg", archivo: "#" },
+  { autor: "Ernesto Nuñez", titulo: "23 manos una duda", imagen: "/images/congreso/recurso-4.jpg", archivo: "#" },
+  { autor: "Hector Ruiz", titulo: "El esfuerzo inteligente detrás del aprendizaje eficaz", imagen: "/images/congreso/recurso-5.jpg", archivo: "#" },
+  { autor: "Nombre de autor", titulo: "Hay ciudades que se visitan. Panamá se interpreta", imagen: "/images/congreso/recurso-6.jpg", archivo: "#" },
 ];
 
 // La grilla muestra 6 recursos (2 filas de 3); las flechas pasan de página cuando haya más.

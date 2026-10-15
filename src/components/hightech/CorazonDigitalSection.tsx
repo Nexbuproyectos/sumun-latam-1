@@ -79,7 +79,7 @@ export function CorazonDigitalSection() {
           ))}
 
           <div className={styles.vidrio} data-parallax="slow">
-            <Image src={`${H}/corazon-digital.png`} width={514} height={506} sizes="257px" alt="" />
+            <Image src={`${H}/corazon-digital.jpg`} width={514} height={506} sizes="257px" alt="" />
           </div>
         </div>
 

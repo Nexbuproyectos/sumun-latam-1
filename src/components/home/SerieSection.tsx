@@ -46,7 +46,7 @@ export function SerieSection() {
                   inert={!visible}
                 >
                   <div className={styles.foto} aria-hidden="true">
-                    <Image src={`${H}/episodio.png`} width={1548} height={1012} sizes="725px" alt="" />
+                    <Image src={`${H}/episodio.jpg`} width={1548} height={1012} sizes="725px" alt="" />
                   </div>
                   <span className={styles.velo} aria-hidden="true" />
                   <span className={styles.degradado} aria-hidden="true" />
@@ -76,7 +76,7 @@ export function SerieSection() {
 
         <article id="conversaciones" className={styles.conversaciones}>
           <div className={styles.convFoto} aria-hidden="true">
-            <Image src={`${H}/conversaciones.png`} width={2847} height={1262} sizes="(min-width: 1200px) 1290px, 110vw" alt="" />
+            <Image src={`${H}/conversaciones.jpg`} width={2847} height={1262} sizes="(min-width: 1200px) 1290px, 110vw" alt="" />
           </div>
           <span className={styles.convBrillo} aria-hidden="true" />
           <img

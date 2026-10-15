@@ -71,7 +71,7 @@ export function CulturaCardsSection() {
 
           <article className={`${styles.card} ${styles.cardComunidad}`}>
             <div className={styles.comunidadFoto} aria-hidden="true">
-              <Image src={`${C}/comunidad.png`} width={626} height={417} sizes="726px" alt="" />
+              <Image src={`${C}/comunidad.jpg`} width={626} height={417} sizes="726px" alt="" />
             </div>
             <img className={styles.comunidadVelo} src={`${C}/velo-comunidad.svg`} alt="" width={584} height={364} aria-hidden="true" />
             <h3 className={`${styles.cardTitle} ${styles.oscuro} ${styles.titleComunidad}`}>

@@ -95,7 +95,7 @@ export function EvolucionCarousel() {
             {tarjetas.map((tarjeta, index) => (
               <li key={tarjeta.title} className={styles.card} style={{ width: tarjeta.width }}>
                 <div className={styles.media} aria-hidden="true">
-                  <img className={styles.base} src="/images/diagnostico/carrusel-base.png" alt="" />
+                  <img className={styles.base} src="/images/diagnostico/carrusel-base.jpg" alt="" />
                   <img
                     className={styles.tira}
                     src={`/images/diagnostico/carrusel-${tarjeta.tira}.png`}

@@ -19,21 +19,21 @@ const noticias: Noticia[] = [
     title: "SUMUN Data Center",
     text: "La toma de decisiones pedagógicas nunca había estado tan bien informada.",
     href: "#",
-    image: { src: "/images/novedades/data-center.png", width: 766, height: 700 },
+    image: { src: "/images/novedades/data-center.jpg", width: 766, height: 700 },
   },
   {
     id: "home",
     title: "SUMUN Home",
     text: "Un espacio donde estudiantes, docentes y familias pueden conectarse con claridad y propósito.",
     href: "#",
-    image: { src: "/images/novedades/home.png", width: 766, height: 700 },
+    image: { src: "/images/novedades/home.jpg", width: 766, height: 700 },
   },
   {
     id: "office",
     title: "Sumun Office",
     text: "Lanzamiento de Sumun en Colombia en Mesa Nacional",
     href: "#",
-    image: { src: "/images/novedades/office.png", width: 766, height: 700 },
+    image: { src: "/images/novedades/office.jpg", width: 766, height: 700 },
   },
   {
     id: "office-lanzamiento",
@@ -41,7 +41,7 @@ const noticias: Noticia[] = [
     text: "Lanzamiento de Sumun en Colombia en Mesa Nacional",
     href: "#",
     image: {
-      src: "/images/novedades/aula.png",
+      src: "/images/novedades/aula.jpg",
       width: 626,
       height: 417,
       className: styles.aula,

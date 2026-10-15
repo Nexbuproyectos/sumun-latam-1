@@ -13,7 +13,7 @@ export function VideoSection() {
 
         <div className={styles.video}>
           <Image
-            src="/images/masterclass/video-cobo.png"
+            src="/images/masterclass/video-cobo.jpg"
             width={2275}
             height={4096}
             sizes="(max-width: 1100px) 90vw, 533px"

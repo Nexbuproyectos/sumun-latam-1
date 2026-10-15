@@ -77,7 +77,7 @@ function FotoMini() {
       <Capa src={`${B}/foto-a.png`} style={recorteA} />
       <Capa src={`${B}/foto-c.png`} style={recorteC} className={styles.capa94} />
       <Capa src={`${B}/foto-b.jpg`} style={{ inset: 0, width: "100%", height: "100%", objectFit: "cover" }} />
-      <Capa src={`${B}/foto-e.png`} style={{ left: "-2.1%", top: 0, width: "104.2%", height: "100%" }} />
+      <Capa src={`${B}/foto-e.jpg`} style={{ left: "-2.1%", top: 0, width: "104.2%", height: "100%" }} />
     </>
   );
 }
@@ -205,7 +205,7 @@ export function BeneficiosSection() {
                   <img src={`${B}/icon-planet.svg`} alt="" width={20.4808} height={20.4808} />
                 </span>
                 <span className={styles.fotoFamilia} style={at(74, 120, 247, 247)}>
-                  <Capa src={`${B}/familia-a.png`} style={recorteFamiliaA} />
+                  <Capa src={`${B}/familia-a.jpg`} style={recorteFamiliaA} />
                   <Capa src={`${B}/familia-b.jpg`} style={recorteFamiliaB} />
                   <span className={styles.burbujaBrillo} />
                 </span>
@@ -281,7 +281,7 @@ export function BeneficiosSection() {
               <span className={styles.vidrioNaranja} style={{ ...at(360, 40, 86, 86), borderWidth: 1.229 }}>
                 <img src={`${B}/atom-86.svg`} alt="" width={35.9041} height={35.9081} />
                 <span className={styles.fotoIcono} style={at(3.93, 3.93, 75.68, 75.68)}>
-                  <Capa src={`${B}/familia-a.png`} style={recorteFamiliaA} />
+                  <Capa src={`${B}/familia-a.jpg`} style={recorteFamiliaA} />
                   <Capa src={`${B}/familia-b.jpg`} style={recorteFamiliaB} />
                 </span>
               </span>
